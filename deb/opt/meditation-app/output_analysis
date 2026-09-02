@@ -1,0 +1,25 @@
+#!/bin/bash
+BIN="/opt/meditation-app/bin"
+DATA="/opt/meditation-app/data"
+cd "$DATA" || exit 1
+
+# Generate composite output video (non-fatal if input files not yet ready)
+"$BIN/5M" 2>/dev/null || true
+wait
+
+videos=(
+    "$DATA/visual1_video_1M.avi"
+    "$DATA/Gaze_output_1M.avi"
+    "$DATA/Depth_output_1M.avi"
+    "$DATA/output_morphed_video.mp4"
+)
+for video in "${videos[@]}"; do
+    if [[ -f "$video" ]]; then
+        echo "Playing $video for 50 seconds..."
+        ffplay -t 50 -fs -autoexit "$video" 2>/dev/null
+        sleep 1
+    else
+        echo "Skipping $video – not found (acquisition may not have produced it)"
+    fi
+done
+echo "Output analysis complete"

@@ -1,0 +1,73 @@
+================================================================================
+  CAMERA DEVICE CONFIGURATION
+  Edit this section in paths.py before running frontback1
+================================================================================
+
+All camera device indices and the RealSense serial number are defined in a
+single place:
+
+    FILE  :  paths.py  (project root)
+
+--------------------------------------------------------------------------------
+  CONSTANTS TO CHANGE
+--------------------------------------------------------------------------------
+
+  THERMAL_CAM_INDEX = 0
+      - Camera used for thermal capture
+      - Used in  : test2_time.py
+      - Change 0 to the correct /dev/videoX index for the thermal camera
+
+  GAZE_CAM_INDEX = 2
+      - Camera used for gaze / eye tracking
+      - Used in  : visual_test6.py, splitGaze.py
+      - Change 2 to the correct /dev/videoX index for the gaze camera
+
+  FRONT_CAM_INDEX = 4
+      - Wide-angle front camera for posture analysis
+      - Used in  : Front.py, check_similarity4.py,
+                   depth/adjustment_test_updated.py
+      - Change 4 to the correct /dev/videoX index for the front camera
+
+  REALSENSE_SERIAL = '243322072083'
+      - Serial number of the Intel RealSense depth camera
+      - Used in  : depthacquisition.py, splitGaze.py,
+                   depth/splitSide.py
+      - Change '243322072083' to the serial number printed on your device
+        or run:  rs-enumerate-devices | grep Serial
+
+--------------------------------------------------------------------------------
+  HOW TO FIND CAMERA INDICES
+--------------------------------------------------------------------------------
+
+  Run the following command to list all connected video devices:
+
+      ls -l /dev/video*
+
+  To test a specific index (e.g. index 2):
+
+      python3 -c "import cv2; cap=cv2.VideoCapture(2); print(cap.isOpened()); cap.release()"
+
+  If it prints True the index is valid and the camera is accessible.
+
+--------------------------------------------------------------------------------
+  HOW TO FIND THE REALSENSE SERIAL NUMBER
+--------------------------------------------------------------------------------
+
+      rs-enumerate-devices | grep Serial
+
+  or check the sticker on the back of the RealSense device.
+
+--------------------------------------------------------------------------------
+  SUMMARY TABLE
+--------------------------------------------------------------------------------
+
+  Constant            | Default | Camera          | Files affected
+  --------------------|---------|-----------------|-------------------------------
+  THERMAL_CAM_INDEX   |    0    | Thermal         | test2_time.py
+  GAZE_CAM_INDEX      |    2    | Gaze / RGB      | visual_test6.py, splitGaze.py
+  FRONT_CAM_INDEX     |    4    | Front posture   | Front.py, check_similarity4.py,
+                      |         |                 | depth/adjustment_test_updated.py
+  REALSENSE_SERIAL    | 243322  | RealSense depth | depthacquisition.py,
+                      | 072083  |                 | splitGaze.py, depth/splitSide.py
+
+================================================================================

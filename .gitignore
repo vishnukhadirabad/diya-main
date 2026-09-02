@@ -60,3 +60,6 @@ Thumbs.db
 *.wmv
 *.flv
 *.webm
+
+# Compiled depth binaries (>100MB, exceed GitHub file limit)
+depth_bin/

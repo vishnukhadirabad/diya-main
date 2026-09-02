@@ -1,0 +1,41 @@
+#!/bin/bash
+BASE_DIR="/opt/meditation-app"
+BIN="$BASE_DIR/bin"
+DBIN="$BASE_DIR/depth_bin"
+DATA="$BASE_DIR/data"
+cd "$DATA" || exit 1
+
+echo "Playing meditation video in full screen..."
+mpv --fs "$DATA/meditation_visualRohan/ONE_MINS.mp4"
+
+echo "Running Front..."
+"$BIN/Front"
+[ $? -ne 0 ] && { echo "Front failed. Exiting."; exit 1; }
+
+echo "Running splitSide..."
+"$DBIN/splitSide"
+[ $? -ne 0 ] && { echo "splitSide failed. Exiting."; exit 1; }
+
+echo "Running splitGaze..."
+"$BIN/splitGaze"
+[ $? -ne 0 ] && { echo "splitGaze failed. Exiting."; exit 1; }
+
+echo "Running adjustment_test_updated..."
+"$DBIN/adjustment_test_updated"
+[ $? -ne 0 ] && { echo "adjustment_test_updated failed. Exiting."; exit 1; }
+
+# Black screen while acquiring
+feh -F "$DATA/black_background_1920x1080.png" &
+BLACK_PID=$!
+
+echo "Running acquisition..."
+bash "$BASE_DIR/acquisition"
+[ $? -ne 0 ] && { kill $BLACK_PID 2>/dev/null; echo "acquisition failed."; exit 1; }
+
+echo "Running t3 (PDF report)..."
+"$BIN/t3"
+[ $? -ne 0 ] && { echo "t3 failed."; exit 1; }
+
+sleep 6
+kill $BLACK_PID 2>/dev/null
+echo "All tasks completed successfully."

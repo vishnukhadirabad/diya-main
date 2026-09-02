@@ -1,0 +1,18 @@
+#!/bin/bash
+BIN="/opt/meditation-app/bin"
+DATA="/opt/meditation-app/data"
+cd "$DATA" || exit 1
+
+"$BIN/check_similarity4" &
+"$BIN/visual_test6" &
+"$BIN/depthacquisition" &
+"$BIN/test2_time" &
+wait
+
+"$BIN/morphing"
+wait
+sleep 2
+
+bash "/opt/meditation-app/output_analysis"
+wait
+echo "Acquisition successfully executed"
