@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Navigate to the directory where the scripts are located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/video_capture" || exit
+
+# Play the video in the background
+mpv depthvideo.avi &
+
+# Wait for the video to finish playing
+wait  

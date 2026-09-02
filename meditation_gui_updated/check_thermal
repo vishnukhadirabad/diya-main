@@ -1,0 +1,21 @@
+#!/bin/bash
+seek_viewer --camtype=seekpro --colormap=11 --mode=file --output=seek.avi &
+PID=$!
+sleep 15
+kill $PID
+#mpv seek.avi
+# Define the width and height
+width=480
+height=640
+
+# Launch the first video
+#mpv --geometry=${width}x${height}+0+0 seek.avi 
+
+# Launch the second video
+mpv --geometry=${width}x${height}+${width}+0 seek.avi 
+
+# Launch the third video
+#mpv --geometry=${width}x${height}+0+${height} seek.avi 
+
+# Launch the fourth video
+#mpv --geometry=${width}x${height}+${width}+${height} seek.avi

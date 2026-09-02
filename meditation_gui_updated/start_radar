@@ -1,0 +1,22 @@
+#START
+
+#!/bin/bash
+#sudo chmod 777 start
+
+cd /mnt/RAMDisk/thermal
+find . -type f -iname \*.jpg -delete
+
+cd /home/pi/Documents/GUI_1stAugust
+find . -name cd6_write.csv -delete
+sudo python3 visual_acquisition.py &
+mplayer /home/pi/Documents/GUI_1stAugust/sahaj_yoga.mp4 -fs &
+sleep 480 && sudo python3 Radar_Acquire_NT.py &
+sleep 480 && feh -F meditation.png &
+
+cd /home/pi/Desktop/flir8k_20thMarch
+sleep 580 && timeout 180s sudo ./flir8k &
+
+
+cd /home/pi/Documents/GUI_1stAugust
+sleep 781 && pidof feh && pkill feh
+

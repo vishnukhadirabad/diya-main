@@ -1,0 +1,63 @@
+# Face Recognition Client — DEFAULT configuration
+# Edit this file, then run:   .venv/bin/python client.py <image>
+#
+# ┌─────────────────────────────────────────────────────────────────────────┐
+# │ WHICH FACE MODEL?                                                        │
+# │                                                                         │
+# │ Detection is always YuNet (cv2.FaceDetectorYN, native OpenCV 5). Only    │
+# │ the embedder varies, and must match whatever the server is enrolled     │
+# │ with (models.embedder_model in its config.yaml):                        │
+# │                                                                         │
+# │   • sface                 → the DEFAULT (set below). 128-dim.            │
+# │   • auraface (R100)        → the alternate. 512-dim.                     │
+# │                                                                         │
+# │ To switch to auraface you have two options:                             │
+# │   1. Easiest — run with the ready-made preset instead of editing:       │
+# │        .venv/bin/python client.py --config config.auraface.yaml <image> │
+# │   2. Or edit the line marked "SWITCH HERE" further down.                │
+# └─────────────────────────────────────────────────────────────────────────┘
+
+# ── Active mode ────────────────────────────────────────────────
+# "server"     — send embeddings to the server; fall back to the local
+#                diagnostic DB if the server is unreachable.
+# "diagnostic" — local SQLite only, no network required.
+mode: server
+
+# ── Server settings (mode: server) ────────────────────────────
+server:
+  url: "http://localhost:8000"   # the mock server (am-mock-server/run.sh).
+                                 # For a real am-master-server, put its address here.
+  timeout: 10                    # per-request timeout in seconds
+
+# ── Diagnostic / offline settings (mode: diagnostic) ──────────
+diagnostic:
+  db_path: ./diagnostic_mode/diagnostic.db
+  faces_dir: ./diagnostic_mode/faces
+  cosine_threshold: 0.6          # min cosine similarity to accept a match
+  topk: 3                        # how many nearest neighbours to log on unknown
+
+# ── Model paths (relative paths resolve against this file's dir) ─
+models:
+  face_detector_path: ./models/face_detection_yunet_2026may.onnx
+  face_recognizer_path: ./models/face_recognition_sface_2021dec.onnx
+  face_recognizer_auraface_path: ./models/aurar100.onnx
+
+# ── Face detection (YuNet, native OpenCV 5 — cv2.FaceDetectorYN) ─
+detection:
+  threshold: 0.5                  # detector confidence (YuNet default 0.5)
+  input_size: 640                 # initial square size; each frame's real size is set at detect-time
+
+# ── Embedding extraction ───────────────────────────────────────
+# Must match whatever the server is enrolled with (models.embedder_model in
+# its config.yaml). Never mix them — the server matches by vector dimension.
+embedder:
+  model: sface                    # <<< SWITCH HERE: sface (128-dim)  (or "auraface" for the 512-dim alternate)
+
+# ── Camera ────────────────────────────────────────────────────
+camera:
+  device: 0                      # camera device index (0 = default webcam)
+  frame_skip: 10                 # run recognition every N frames
+
+# ── Logging ───────────────────────────────────────────────────
+logging:
+  level: INFO                    # DEBUG | INFO | WARNING | ERROR

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Path to the reference image
+REFERENCE_IMAGE="Screenshot from 2025-05-07 10-45-22.png"
+
+# Command to your Python webcam script
+# Replace this with your actual script if it's named differently
+PYTHON_SCRIPT="python3 check_similarity.py"
+
+# Open reference image on the left half using feh
+feh --geometry 960x1080+0+0 --zoom fill "$REFERENCE_IMAGE" &
+
+# Wait a bit to ensure the image viewer is up
+sleep 1
+
+# Run your webcam script
+# If your webcam window doesn't auto-place, you might need to manually move it or use wmctrl/xdotool
+$PYTHON_SCRIPT &
+

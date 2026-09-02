@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install ruff
+        run: pip install ruff==0.15.21
+
+      - name: Run ruff check
+        run: ruff check .
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Install system deps for OpenCV
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libgl1 libglib2.0-0
+
+      - name: Install Python deps
+        run: pip install -r requirements-dev.txt
+
+      # aurar100.onnx (the auraface model) is gitignored — too large for git.
+      # The default embedder_model is sface, which only needs the two model
+      # files that ARE tracked in git, so tests run against the real sface
+      # pipeline. config.yaml now uses paths relative to the checkout, so no
+      # CI-specific config override is needed.
+      - name: Run pytest
+        run: python -m pytest tests/ -v

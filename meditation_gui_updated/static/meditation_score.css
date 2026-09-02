@@ -1,0 +1,49 @@
+body {
+    background-color: #f0f0f0;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    font-size: 4em;
+    font-weight: bold;
+    color: #020407e1;
+    margin-bottom: 20px;
+}
+
+.score-container {
+    margin-bottom: 70px;
+}
+
+.score-text {
+    font-size: 3em;
+    color: #28a745;
+}
+
+.reference-text {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 20px;
+}
+
+.home-button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.home-button:hover {
+    background-color: #003d7a;
+}

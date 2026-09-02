@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Navigate to the directory where the scripts are located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit
+
+# Run visual1capture.py in the background (Wide Angle)
+#python3 visual_test.py &
+python3 check_similarity4.py &
+#Run visual2capture.py in the background (Gaze)
+#timeout 300 python3 visual_test3.py &
+python3 visual_test6.py &
+# Run depthx.py in the background (Depth)
+#timeout 300 python3 depthex.py &
+python3 depthacquisition.py &
+
+# Run thermalcapture bash script in the background (Thermal)
+#./thermalcapture &
+python3 test2_time.py &
+
+# Run RADAR
+sudo python3 Radar_Acquire_NT.py &
+
+# Wait for all background processes to finish
+wait

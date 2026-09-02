@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='instructions.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="instructions-container">
+        <div class="instructions-header">
+            <h1>Instructions</h1>
+        </div>
+        <div class="instructions-text">
+            <div class="instructions-content">
+                <p>
+                    1. Find a quiet, peaceful place.<br>
+                    2. Sit comfortably, legs crossed, or in a chair.<br>
+                    3. Close your eyes, take deep breaths, and relax your body.<br>
+                    4. Focus on Shiva and visualize divine light.<br>
+                    5. Meditate for 5 minutes and stay focused.
+                </p>
+            </div>
+            <div class="instructions-image">
+                <img src="{{ url_for('static', filename='images/b9c33c137aa3cdc993547b504e0e10ff.jpg') }}" alt="Lingayat Meditation">
+            </div>
+        </div>
+        <div class="next-button-container">
+            <button class="next-button" onclick="window.location.href='/sensor_check'">Next</button>
+        </div>
+    </div>
+</body>
+</html>

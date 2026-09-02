@@ -1,0 +1,3 @@
+[submodule "DiyaMeditation/vendor/am-mock-client"]
+	path = DiyaMeditation/vendor/am-mock-client
+	url = https://github.com/IIITH-CVIT/am-mock-client.git

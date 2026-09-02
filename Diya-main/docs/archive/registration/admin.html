@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diya Meditation — Admin Roster</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1330, #0e0b16); color: #f4f0ff; padding: 32px 16px;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; }
+    .card {
+      background: #231a3d; border-radius: 18px; padding: 28px; margin-bottom: 22px;
+      box-shadow: 0 16px 48px rgba(0,0,0,.4);
+    }
+    h1 { margin: 0 0 4px; font-size: 28px; }
+    h2 { margin: 0 0 14px; font-size: 18px; color: #e9b872; }
+    p.sub { margin: 0 0 20px; color: #b4a9d6; }
+    label { display: block; font-size: 14px; color: #b4a9d6; margin: 14px 0 6px; }
+    input[type="text"], input[type="password"], input[type="file"] {
+      width: 100%; padding: 12px 14px; font-size: 15px; border-radius: 10px;
+      border: 1px solid #3a2f5c; background: #1a1330; color: #f4f0ff;
+    }
+    button {
+      margin-top: 18px; padding: 12px 18px; font-size: 15px; font-weight: 600;
+      border: none; border-radius: 10px; background: #e9b872; color: #1a1330; cursor: pointer;
+    }
+    button:disabled { opacity: .5; cursor: default; }
+    button.secondary { background: transparent; color: #b4a9d6; border: 1px solid #3a2f5c; }
+    .msg { margin-top: 12px; min-height: 18px; font-size: 14px; }
+    .msg.err { color: #ff9a9a; }
+    .msg.ok  { color: #7ee0a0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14px; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #33285a; vertical-align: top; }
+    th { color: #b4a9d6; font-weight: 600; }
+    td.link { word-break: break-all; color: #cbbcf0; }
+    .row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .pill { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #33285a; color: #d8ccff; }
+    code { background: #1a1330; padding: 2px 6px; border-radius: 6px; }
+    .hint { font-size: 13px; color: #8f83b8; margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Diya Admin — Roster Upload</h1>
+      <p class="sub">Upload an Excel sheet of people. Each person gets a unique login link.</p>
+
+      <label for="adminKey">Admin key</label>
+      <input id="adminKey" type="password" placeholder="Enter the admin key" autocomplete="off" />
+      <div class="hint">Set on the server as <code>ADMIN_KEY</code>. Stored only for this browser tab.</div>
+
+      <label for="file" style="margin-top:22px">Excel file (.xlsx / .xls)</label>
+      <input id="file" type="file" accept=".xlsx,.xls" />
+      <div class="hint">Expected columns: <code>Name</code>, <code>Role</code>, <code>Aadhar</code>, <code>Email Id</code>, <code>Image</code>. Only <b>Name</b> is required per row.</div>
+
+      <div class="msg" id="parseMsg"></div>
+    </div>
+
+    <div class="card" id="previewCard" style="display:none">
+      <h2>Preview</h2>
+      <p class="sub" id="previewCount"></p>
+      <div style="overflow-x:auto"><table id="previewTable"></table></div>
+      <button id="generateBtn">Generate login links</button>
+      <div class="msg" id="genMsg"></div>
+    </div>
+
+    <div class="card" id="resultCard" style="display:none">
+      <h2>Login links</h2>
+      <p class="sub">Share each person's link with them. Opening it lets them scan the kiosk to log in.</p>
+      <div class="row-actions">
+        <button class="secondary" id="copyAllBtn">Copy all links</button>
+        <button class="secondary" id="downloadBtn">Download as CSV</button>
+      </div>
+      <div style="overflow-x:auto"><table id="resultTable"></table></div>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = '';
+    const $ = (id) => document.getElementById(id);
+
+    const adminKey = $('adminKey');
+    adminKey.value = sessionStorage.getItem('diyaAdminKey') || '';
+    adminKey.addEventListener('input', () => sessionStorage.setItem('diyaAdminKey', adminKey.value));
+
+    let parsedRows = [];        // raw JSON rows (keyed by sheet headers)
+    let generated = [];         // [{ name, role, url }]
+
+    // Mask an Aadhaar so only the last 4 digits show in the preview.
+    function maskAadhar(v) {
+      const s = String(v || '').replace(/\s+/g, '');
+      if (!s) return '';
+      return s.length <= 4 ? s : '•••• •••• ' + s.slice(-4);
+    }
+
+    // Read a value from a row by trying several header spellings.
+    function field(row, ...wanted) {
+      for (const key of Object.keys(row)) {
+        const norm = key.trim().toLowerCase().replace(/\s+/g, '');
+        // Substring match so headers like "Image Link (Gdrive ...)" still map.
+        if (wanted.some((w) => norm.includes(w))) return row[key] == null ? '' : String(row[key]).trim();
+      }
+      return '';
+    }
+
+    $('file').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      const msg = $('parseMsg');
+      msg.className = 'msg';
+      msg.textContent = '';
+      $('previewCard').style.display = 'none';
+      $('resultCard').style.display = 'none';
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const wb = XLSX.read(new Uint8Array(ev.target.result), { type: 'array' });
+          const ws = wb.Sheets[wb.SheetNames[0]];
+          parsedRows = XLSX.utils.sheet_to_json(ws, { defval: '' });
+          if (parsedRows.length === 0) {
+            msg.className = 'msg err';
+            msg.textContent = 'That sheet has no data rows.';
+            return;
+          }
+          renderPreview();
+        } catch (err) {
+          msg.className = 'msg err';
+          msg.textContent = 'Could not read that file: ' + (err.message || err);
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    });
+
+    function renderPreview() {
+      const valid = parsedRows.filter((r) => field(r, 'name', 'fullname'));
+      $('previewCount').textContent =
+        `${parsedRows.length} row(s) found — ${valid.length} with a name will be imported.`;
+
+      const head = ['Name', 'Role', 'Aadhar', 'Email Id', 'Image'];
+      let html = '<tr>' + head.map((h) => `<th>${h}</th>`).join('') + '</tr>';
+      for (const r of parsedRows) {
+        const name = field(r, 'name', 'fullname');
+        html += '<tr>' +
+          `<td>${esc(name) || '<span class="pill">skipped</span>'}</td>` +
+          `<td>${esc(field(r, 'role', 'designation'))}</td>` +
+          `<td>${esc(maskAadhar(field(r, 'aadhar', 'aadhaar', 'aadharno', 'aadhaarnumber', 'aadharnumber')))}</td>` +
+          `<td>${esc(field(r, 'emailid', 'email', 'emailaddress'))}</td>` +
+          `<td class="link">${esc(field(r, 'image', 'imageurl', 'photo', 'picture'))}</td>` +
+        '</tr>';
+      }
+      $('previewTable').innerHTML = html;
+      $('previewCard').style.display = 'block';
+    }
+
+    $('generateBtn').addEventListener('click', async () => {
+      const genMsg = $('genMsg');
+      genMsg.className = 'msg';
+      genMsg.textContent = '';
+      if (!adminKey.value.trim()) {
+        genMsg.className = 'msg err';
+        genMsg.textContent = 'Enter the admin key first.';
+        return;
+      }
+      const btn = $('generateBtn');
+      btn.disabled = true;
+      btn.textContent = 'Generating…';
+      try {
+        const resp = await fetch(`${API_BASE}/api/admin/upload`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey.value.trim() },
+          body: JSON.stringify({ people: parsedRows }),
+        });
+        const out = await resp.json().catch(() => ({}));
+        if (!resp.ok) throw new Error(out.error || `Server error (${resp.status})`);
+
+        generated = out.created.map((c) => ({ name: c.name, role: c.role, url: location.origin + c.path }));
+        renderResult(out);
+        genMsg.className = 'msg ok';
+        genMsg.textContent = `Created ${out.count} link(s)` +
+          (out.skipped?.length ? `, skipped ${out.skipped.length}.` : '.');
+      } catch (err) {
+        genMsg.className = 'msg err';
+        genMsg.textContent = err.message || 'Upload failed.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Generate login links';
+      }
+    });
+
+    function renderResult(out) {
+      let html = '<tr><th>Name</th><th>Role</th><th>Login link</th><th></th></tr>';
+      for (const g of generated) {
+        html += '<tr>' +
+          `<td>${esc(g.name)}</td>` +
+          `<td>${esc(g.role)}</td>` +
+          `<td class="link">${esc(g.url)}</td>` +
+          `<td><button class="secondary" data-url="${esc(g.url)}">Copy</button></td>` +
+        '</tr>';
+      }
+      const table = $('resultTable');
+      table.innerHTML = html;
+      table.querySelectorAll('button[data-url]').forEach((b) => {
+        b.addEventListener('click', () => copyText(b.getAttribute('data-url'), b));
+      });
+      $('resultCard').style.display = 'block';
+      $('resultCard').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    $('copyAllBtn').addEventListener('click', (e) => {
+      const text = generated.map((g) => `${g.name}\t${g.url}`).join('\n');
+      copyText(text, e.target);
+    });
+
+    $('downloadBtn').addEventListener('click', () => {
+      const rows = [['Name', 'Role', 'Login link'],
+        ...generated.map((g) => [g.name, g.role, g.url])];
+      const csv = rows.map((r) => r.map(csvCell).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'diya-login-links.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    function copyText(text, btn) {
+      navigator.clipboard.writeText(text).then(() => {
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => (btn.textContent = old), 1200);
+      });
+    }
+    function csvCell(v) {
+      const s = String(v ?? '');
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, (c) =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+  </script>
+</body>
+</html>

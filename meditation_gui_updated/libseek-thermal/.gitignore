@@ -1,0 +1,8 @@
+build
+tags
+*.o
+*.a
+*.so
+.vs/
+out/**
+CMakeSettings.json

@@ -1,0 +1,5 @@
+#!/bin/bash
+#sudo chmod 777 check_radar
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit
+find . -name seek.avi -delete

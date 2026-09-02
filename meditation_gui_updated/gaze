@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Navigate to the directory where the video is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/video_capture" || exit
+
+# Open the video file
+mpv hand_detection_output.avi

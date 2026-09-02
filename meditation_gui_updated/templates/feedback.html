@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="/static/feedback.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        Feedback
+    </div>
+
+    <div class="feedback-container">
+        <form id="feedbackForm" action="{{ url_for('submit_feedback') }}" method="post">
+            <!-- Ensure user_id and session_id are passed -->
+            <input type="hidden" name="user_id" value="{{ session.get('user_id') }}">
+            <input type="hidden" name="session_id" value="{{ session.get('session_id') }}">
+
+            <div class="question">
+                <label for="q1">How did you feel before the meditation session?</label>
+                <select id="q1" name="q1" required>
+                    <option value="Select">Select</option>
+                    <option value="fear">fear</option>
+                    <option value="contempt">contempt</option>
+                    <option value="disgust">disgust</option>
+                    <option value="sadness">sadness</option>
+                    <option value="anger">anger</option>
+                    <option value="happiness">happiness</option>
+                    <option value="surprise">surprise</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q2">How do you feel after the meditation session?</label>
+                <select id="q2" name="q2" required>
+                    <option value="Select">Select</option>
+                    <option value="fear">fear</option>
+                    <option value="contempt">contempt</option>
+                    <option value="disgust">disgust</option>
+                    <option value="sadness">sadness</option>
+                    <option value="anger">anger</option>
+                    <option value="happiness">happiness</option>
+                    <option value="surprise">surprise</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q3">Did you find the meditation session helpful?</label>
+                <select id="q3" name="q3" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="question">
+                <label for="q4">Any suggestions for improvement?</label>
+                <select id="q4" name="q4" required>
+                    <option value="Select">Select</option>
+                    <option value="fear">Need No improvement </option>
+                    <option value="contempt">Need Improvement</option>
+                    <option value="disgust">Need Few Improvement</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <div id="thanksMessage" class="thanks-message" style="display: none;">
+        <p>Thanks for your response!</p>
+        <!-- Logout Button -->
+        <form action="{{ url_for('logout') }}" method="post">
+            <button type="submit" class="submit-button">Logout</button>
+        </form>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            var form = document.getElementById('feedbackForm');
+            var formData = new FormData(form);
+
+            fetch('{{ url_for("submit_feedback") }}', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('feedbackForm').style.display = 'none';
+                    document.getElementById('thanksMessage').style.display = 'block';
+                } else {
+                    alert('There was a problem with the submission.');
+                }
+            }).catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        document.getElementById('feedbackForm').addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>

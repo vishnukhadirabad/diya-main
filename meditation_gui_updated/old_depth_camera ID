@@ -1,0 +1,2 @@
+# Set the correct device serial number
+config.enable_device('243322072083')

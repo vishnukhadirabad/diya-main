@@ -1,0 +1,13 @@
+#!/bin/bash
+#seek_viewer --camtype=seekpro --colormap=11 --mode=file --output=seek1.avi &
+#PID=$!
+#sleep 300
+#kill $PID
+#mpv seek.avi
+# Navigate to the directory where the Python script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_DIR/video_capture" || exit
+
+# Run the Python script
+python3 test2_time.py

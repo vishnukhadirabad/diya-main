@@ -1,0 +1,243 @@
+﻿COMPLETE LINUX PROJECT SETUP GUIDE
+
+PROJECT OVERVIEW
+This guide explains the complete setup procedure for migrating and running the project on a new Linux system.
+The setup includes:
+    • Installing Linux system dependencies
+    • Creating Python virtual environment (venv)
+    • Installing Python requirements
+    • Configuring VS Code
+    • Enabling automatic venv activation
+    • Recovering environment after reboot/shutdown
+    • Maintaining reproducible project execution
+
+REQUIRED FILES INSIDE PROJECT
+The project folder should contain:
+project/
+│
+├── requirements.txt
+├── install_system_dependencies.sh
+├── setup_project.sh
+├── README.md
+├── .vscode/
+│   └── settings.json
+│
+├── venv/
+│
+└── source_code/
+
+STEP 1 — OPEN PROJECT DIRECTORY
+Purpose
+Move inside the project folder.
+Command
+cd /path/to/project
+Example
+cd ~/Desktop/my_project
+
+STEP 2 — INSTALL LINUX SYSTEM DEPENDENCIES
+Purpose
+Install required Linux packages and system libraries.
+These are required for:
+    • OpenCV
+    • TensorFlow
+    • PyTorch
+    • MediaPipe
+    • GUI rendering
+    • Video processing
+    • Scientific computation
+    • GPU support
+    • Compilers/build tools
+Command
+bash install_system_dependencies.sh
+
+or 
+
+sudo apt update
+
+sudo apt install -y \
+    python3-dev \
+    python3-venv \
+    build-essential \
+    cmake \
+    git \
+    curl \
+    wget \
+    ffmpeg \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgtk2.0-dev \
+    libgtk-3-dev \
+    libboost-all-dev \
+    libopenblas-dev \
+    liblapack-dev \
+    libhdf5-dev \
+    libprotobuf-dev \
+    protobuf-compiler \
+    redis-server
+
+STEP 3 — CREATE PYTHON VIRTUAL ENVIRONMENT
+Purpose
+Create isolated Python environment.
+This prevents:
+    • Dependency conflicts
+    • Global package corruption
+    • Version mismatch
+    • System Python modification
+
+Command
+python3 -m venv venv
+
+
+Result
+Creates:
+project/
+└── venv/
+
+
+STEP 4 — ACTIVATE VIRTUAL ENVIRONMENT
+Purpose
+Activate isolated Python environment.
+All package installations now remain inside the project.
+
+Command
+source venv/bin/activate
+
+
+Expected Terminal Output
+(venv) user@system:~/project$
+
+STEP 5 — UPGRADE pip AND BUILD TOOLS
+
+Purpose
+Upgrade package installer and build dependencies.
+Required for:
+    • Large AI/ML packages
+    • Wheel compilation
+    • CUDA packages
+    • Modern dependency installation
+
+Command
+pip install --upgrade pip setuptools wheel
+
+
+
+
+
+STEP 6 — INSTALL PYTHON REQUIREMENTS
+Purpose
+Install all Python dependencies from requirements.txt.
+
+Command
+pip install -r requirements.txt
+
+
+STEP 7 — VERIFY INSTALLATION
+Purpose
+Verify that important packages are installed correctly.
+
+Command
+python3
+
+Test Imports
+import torch
+import tensorflow
+import cv2
+import numpy
+import pandas
+Exit Python
+exit()
+
+STEP 8 — OPEN PROJECT IN VS CODE
+Purpose
+Open project workspace in VS Code.
+
+Command
+code .
+
+
+STEP 9 — CONFIGURE VS CODE PYTHON INTERPRETER
+Purpose
+Bind VS Code permanently to the project virtual environment.
+This ensures:
+    • Correct Python interpreter
+    • Correct package visibility
+    • Automatic environment handling
+
+
+Instructions
+Open Command Palette:
+CTRL + SHIFT + P
+
+Search:
+Python: Select Interpreter
+
+Select:
+./venv/bin/python
+
+STEP 10 — ENABLE AUTOMATIC venv ACTIVATION IN VS CODE TERMINAL
+Purpose
+
+Automatically activate virtual environment whenever:
+    • VS Code opens
+    • Terminal opens
+    • Project reloads
+    • System restarts
+This removes the need to manually run:
+source venv/bin/activate
+every time.
+
+Create VS Code Settings Folder
+mkdir -p .vscode
+
+Create settings.json File
+nano .vscode/settings.json
+
+Paste the Following Configuration
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/python",
+    "python.terminal.activateEnvironment": true
+}
+
+
+Save File
+
+Inside nano:
+CTRL + O
+Enter
+CTRL + X
+
+
+RESULT OF STEP 10
+Now whenever:
+    • System reboots
+    • VS Code opens
+    • Project folder opens
+    • New terminal opens
+VS Code automatically activates:
+(venv)
+No manual activation needed.
+
+STEP 11 — RECOVER ENVIRONMENT AFTER SHUTDOWN OR REBOOT
+Purpose
+Restore project instantly after:
+    • Power failure
+    • System restart
+    • Shutdown
+    • Crash
+    • VS Code restart
+
+Reopen Project
+cd /path/to/project
+
+code .
+
+Open Terminal Inside VS Code
+Expected automatic activation:
+(venv) user@system:~/project$
+The environment is restored automatically.
+
+
+

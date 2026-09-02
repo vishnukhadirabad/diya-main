@@ -1,0 +1,43 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit
+
+source "$SCRIPT_DIR/wait_for_file.sh"
+
+# 5M.py used to run here, and its three conversions (~11s) were dead black
+# screen before the first clip appeared. It is started by `acquisition` now,
+# together with morphing.py, and this loop waits per clip instead — the posture
+# clip is converted first, so playback begins after ~3s while the rest are
+# still encoding behind it.
+
+# List of video files
+videos=(
+    "$SCRIPT_DIR/visual1_video_1M.avi"
+    "$SCRIPT_DIR/Gaze_output_1M.avi"
+    "$SCRIPT_DIR/Depth_output_1M.avi"
+    "$SCRIPT_DIR/output_morphed_video.mp4"
+)
+
+# Loop through each video and play it for 1 minute
+for video in "${videos[@]}"; do
+    # Producers rename into place when finished, so existence means complete.
+    # A clip that never arrives is skipped rather than stalling the session.
+    if ! wait_for_file "$video" 180; then
+        echo "Skipping $video — it was never produced."
+        continue
+    fi
+    echo "Playing $video for 1 minute..."
+    # -fs fullscreen, -noborder drops the title bar / window buttons (kiosk),
+    # -alwaysontop keeps it above the shell, -autoexit closes when done.
+    # -nostats/-loglevel quiet stop ffplay repainting the terminal. 'q' quits.
+    ffplay -t 50 -fs -noborder -alwaysontop -autoexit -loglevel quiet -nostats "$video"
+    # (The old `sleep 1` between clips was marked "optional" and cost 4s a run —
+    # ffplay has already exited here, so the next clip can open immediately.)
+done
+
+
+
+
+
+echo "Output_analysis Sucessfully executed"

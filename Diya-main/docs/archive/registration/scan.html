@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diya Meditation — Login</title>
+  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1330, #0e0b16); color: #f4f0ff; padding: 24px;
+    }
+    .card {
+      width: 100%; max-width: 440px; background: #231a3d; border-radius: 20px;
+      padding: 32px; box-shadow: 0 16px 48px rgba(0,0,0,.4); text-align: center;
+    }
+    h1 { margin: 0 0 6px; font-size: 26px; }
+    .role { color: #e9b872; font-weight: 600; margin: 0 0 18px; }
+    p.sub { margin: 0 0 22px; color: #b4a9d6; line-height: 1.5; }
+    button {
+      width: 100%; margin-top: 8px; padding: 14px; font-size: 16px; font-weight: 600;
+      border: none; border-radius: 10px; background: #e9b872; color: #1a1330; cursor: pointer;
+    }
+    button:disabled { opacity: .6; cursor: default; }
+    button.secondary { background: transparent; color: #b4a9d6; border: 1px solid #3a2f5c; }
+    #reader { width: 100%; margin-top: 18px; border-radius: 12px; overflow: hidden; }
+    .msg { margin-top: 14px; min-height: 18px; font-size: 14px; }
+    .msg.err { color: #ff9a9a; }
+    .msg.ok  { color: #7ee0a0; }
+    .big { font-size: 44px; margin-bottom: 6px; }
+    .done { font-size: 24px; font-weight: 700; color: #7ee0a0; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Loading / greeting -->
+    <div id="greeting">
+      <div class="big">🪔</div>
+      <h1 id="hello">Loading…</h1>
+      <p class="role" id="role"></p>
+      <p class="sub">Tap below, then scan the QR code shown on the Diya kiosk screen to log in.</p>
+      <button id="proceedBtn" disabled>Proceed to login</button>
+      <div class="msg" id="loadMsg"></div>
+    </div>
+
+    <!-- Scanner -->
+    <div id="scanner" class="hidden">
+      <h1>Scan the kiosk</h1>
+      <p class="sub">Point your camera at the QR code on the kiosk screen.</p>
+      <div id="reader"></div>
+      <div class="msg" id="scanMsg"></div>
+      <button class="secondary" id="cancelBtn">Cancel</button>
+    </div>
+
+    <!-- Success -->
+    <div id="success" class="hidden">
+      <div class="big">✓</div>
+      <div class="done" id="successName">Logged in!</div>
+      <p class="sub" id="successMsg">You're authenticated — the kiosk will continue automatically.</p>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = '';
+    const $ = (id) => document.getElementById(id);
+
+    // /p/<token>  ->  token
+    const PERSON = decodeURIComponent(location.pathname.replace(/^\/p\//, '').replace(/\/+$/, ''));
+
+    let html5Qr = null;
+    let handling = false; // guard against multiple scan callbacks
+
+    // 1) Greet the person by name (name/role only; no sensitive data).
+    (async function loadPerson() {
+      if (!PERSON) return showLoadError('Invalid link.');
+      try {
+        const resp = await fetch(`${API_BASE}/api/people/${encodeURIComponent(PERSON)}`);
+        if (resp.status === 404) return showLoadError('This login link was not recognised.');
+        if (!resp.ok) throw new Error(`Server error (${resp.status})`);
+        const p = await resp.json();
+        $('hello').textContent = `Hi ${p.name}`;
+        $('role').textContent = p.role || '';
+        $('proceedBtn').disabled = false;
+      } catch (err) {
+        showLoadError('Could not reach the server. Please try again.');
+      }
+    })();
+
+    function showLoadError(text) {
+      $('hello').textContent = 'Something went wrong';
+      const m = $('loadMsg');
+      m.className = 'msg err';
+      m.textContent = text;
+    }
+
+    // 2) Proceed -> open the camera scanner.
+    $('proceedBtn').addEventListener('click', async () => {
+      $('greeting').classList.add('hidden');
+      $('scanner').classList.remove('hidden');
+      html5Qr = new Html5Qrcode('reader');
+      try {
+        await html5Qr.start(
+          { facingMode: 'environment' },
+          { fps: 10, qrbox: { width: 240, height: 240 } },
+          onScan,
+          () => {} // per-frame decode errors are normal; ignore
+        );
+      } catch (err) {
+        const m = $('scanMsg');
+        m.className = 'msg err';
+        m.textContent = 'Could not open the camera. Allow camera access and reload.';
+      }
+    });
+
+    $('cancelBtn').addEventListener('click', () => stopScanner().then(() => location.reload()));
+
+    // 3) Got a QR -> extract the session token and claim it.
+    async function onScan(decodedText) {
+      if (handling) return;
+      handling = true;
+
+      const session = extractSession(decodedText);
+      const m = $('scanMsg');
+      if (!session) {
+        m.className = 'msg err';
+        m.textContent = "That doesn't look like a Diya kiosk code. Try again.";
+        handling = false;
+        return;
+      }
+
+      m.className = 'msg';
+      m.textContent = 'Logging you in…';
+      await stopScanner();
+
+      try {
+        const resp = await fetch(`${API_BASE}/api/claim`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ person: PERSON, session }),
+        });
+        const out = await resp.json().catch(() => ({}));
+        if (!resp.ok) throw new Error(out.error || `Server error (${resp.status})`);
+        showSuccess(out.name);
+      } catch (err) {
+        $('scanner').classList.add('hidden');
+        $('greeting').classList.remove('hidden');
+        const lm = $('loadMsg');
+        lm.className = 'msg err';
+        lm.textContent = err.message || 'Login failed. Please try again.';
+        handling = false;
+      }
+    }
+
+    function showSuccess(name) {
+      $('scanner').classList.add('hidden');
+      $('success').classList.remove('hidden');
+      if (name) $('successName').textContent = `Welcome, ${name}!`;
+    }
+
+    async function stopScanner() {
+      if (!html5Qr) return;
+      try { await html5Qr.stop(); html5Qr.clear(); } catch (_) {}
+      html5Qr = null;
+    }
+
+    // The kiosk QR encodes <site>/?session=<token>. Pull the token out; also
+    // tolerate a bare token or a "?session=..." fragment.
+    function extractSession(text) {
+      const s = String(text || '').trim();
+      try {
+        const u = new URL(s);
+        const q = u.searchParams.get('session');
+        if (q) return q;
+      } catch (_) { /* not a full URL */ }
+      const m = s.match(/[?&]session=([^&\s]+)/);
+      if (m) return decodeURIComponent(m[1]);
+      // Fallback: treat the whole payload as the token (no spaces, reasonable length).
+      if (/^[A-Za-z0-9_-]{6,64}$/.test(s)) return s;
+      return null;
+    }
+  </script>
+</body>
+</html>

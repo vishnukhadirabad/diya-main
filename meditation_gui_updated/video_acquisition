@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Navigate to the directory where the scripts are located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/video_capture" || exit
+
+# Run visual1capture.py in the background
+#python3 visual_test.py &
+
+# Run visual2capture.py in the background
+#python3 visual_test2.py &
+
+python3 depthex.py &
+
+# Run thermalcapture bash script in the background
+#./thermalcapture &
+
+sudo python3 Radar_Acquire_NT.py &
+
+# Wait for all background processes to finish
+wait
+

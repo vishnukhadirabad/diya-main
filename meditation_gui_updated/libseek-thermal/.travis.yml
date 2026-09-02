@@ -1,0 +1,14 @@
+dist: trusty
+language: c
+
+addons:
+    apt:
+        packages:
+            - libopencv-dev
+            - libusb-1.0-0-dev
+
+script:
+    - mkdir -p build
+    - cd build
+    - cmake ..
+    - make

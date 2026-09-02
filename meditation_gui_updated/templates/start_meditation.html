@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start Meditation</title>
+    <link rel="stylesheet" href="/static/start_meditation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header" id="meditationHeader">
+        Start Meditation
+    </div>
+    
+    <div class="start-container">
+        <button class="start-button" onclick="startMeditation()">Start</button>
+    </div>
+    <div id="thanksMessage" class="thanks-message" style="display: none;">
+        <p>If You have completed Meditation please click Next button</p>
+        <button class="next-button" onclick="window.location.href='/sensor_check'">Next</button>
+    </div>
+    <script>
+        function startMeditation() {
+            const startButton = document.querySelector('.start-button');
+            const thanksMessage = document.getElementById('thanksMessage');
+            const headerElement = document.getElementById('meditationHeader');
+    
+            // Send an AJAX request to trigger the bash script in the background
+            fetch('/start-background-task', {
+                method: 'POST',
+            }).then(response => {
+                if (response.ok) {
+                    console.log("Bash script completed.");
+                    // Show the "Thanks for Doing Meditation" message
+                    thanksMessage.style.display = 'block';
+                } else {
+                    console.error("Failed to complete the bash script.");
+                }
+            }).catch(error => {
+                console.error('Error in AJAX request:', error);
+            });
+    
+            // Hide the start button and header when starting meditation
+            startButton.style.display = 'none';
+            headerElement.style.display = 'none';  // Hide the header
+        }
+    
+        document.addEventListener('keydown', (event) => {
+            if (event.key === "Escape") {
+                document.getElementById('thanksMessage').style.display = 'none';
+                document.querySelector('.start-button').style.display = 'block';
+                document.getElementById('meditationHeader').style.display = 'block';  // Show the header again if user presses escape
+            }
+        });
+    </script>
+    
+</body>
+</html>

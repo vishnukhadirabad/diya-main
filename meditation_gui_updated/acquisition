@@ -1,0 +1,76 @@
+#!/bin/bash
+
+# Get the folder where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Navigate to project directory
+cd "$SCRIPT_DIR" || exit
+
+
+# Run visual1capture.py in the background (Wide Angle)
+#python3 visual_test.py &
+python3 "$SCRIPT_DIR/check_similarity4.py" &
+#Run visual2capture.py in the background (Gaze)
+#timeout 300 python3 visual_test3.py &
+python3 "$SCRIPT_DIR/visual_test6.py" &
+# Run depthx.py in the background (Depth)
+#timeout 300 python3 depthex.py &
+python3 "$SCRIPT_DIR/depthacquisition.py" &
+
+# Run thermalcapture bash script in the background (Thermal)
+python3 "$SCRIPT_DIR/test2_time.py" &
+
+# Run RADAR
+#sudo python3 Radar_Acquire_NT.py &
+
+# Wait for all background processes to finish
+wait
+
+# (A fixed `sleep 2` used to sit here, between the captures and the playback
+# stage. It bought nothing but dead time on a black screen.)
+
+# morphing.py (thermal) and 5M.py (the three 1-minute clips) read different
+# source videos and neither needs the other's output, so they run together.
+# Serialising them cost ~17s of black screen; the visitor now waits only for
+# 5M.py's first clip, and everything else finishes behind the playback.
+source "$SCRIPT_DIR/wait_for_file.sh"
+
+# Clear last run's outputs *before* anything can look for them. Both consumers
+# below treat "the file exists" as "this visitor's clip is ready", and the
+# producers delete their own stale output too — but that happens inside a
+# process we have already backgrounded, so a consumer can win the race and pick
+# up the previous visitor's video. Deleting here, while nothing else is
+# running, is what actually makes that impossible.
+for artefact in visual1_video_1M.avi Gaze_output_1M.avi \
+                Depth_output_1M.avi output_morphed_video.mp4; do
+    rm -f "$SCRIPT_DIR/$artefact" "$SCRIPT_DIR/${artefact%.*}.part.${artefact##*.}"
+done
+
+python3 "$SCRIPT_DIR/morphing.py" &
+MORPH_PID=$!
+python3 "$SCRIPT_DIR/5M.py" &
+FIVE_M_PID=$!
+
+# t3.py reads only the four generated videos, none of which change once
+# written, so the report is built while the visitor watches the playback rather
+# than on a black screen for ~9s afterwards. nice keeps it off the playback's
+# back. Waiting on the files rather than the PIDs also covers morphing.py's
+# "no subject found" early exit, which never writes its output at all.
+(
+    for artefact in visual1_video_1M.avi Gaze_output_1M.avi \
+                    Depth_output_1M.avi output_morphed_video.mp4; do
+        wait_for_file "$SCRIPT_DIR/$artefact" 240 || true
+    done
+    nice -n 10 python3 "$SCRIPT_DIR/t3.py"
+) &
+T3_PID=$!
+
+# Run the output_analysis bash file
+bash "$SCRIPT_DIR/output_analysis"
+
+# Playback is ~200s and the report takes ~9s of it, so this is normally already
+# done — but the session must not advance to the report screen before the PDF
+# it is going to display has actually been written.
+wait "$MORPH_PID" "$FIVE_M_PID" 2>/dev/null
+wait "$T3_PID"
+echo "acqusition Sucessfully executed"

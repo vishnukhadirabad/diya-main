@@ -1,0 +1,3599 @@
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 11:23:35
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.221] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] STOP:OK
+[Arduino] EARLY:COLLISION_PROX_A0
+[SAFETY] EARLY:COLLISION_PROX_A0 — the A0 collision proximity sensor detected an incoming obstruction before the mechanical collision switch was reached. Both motors were stopped by the firmware.
+[Arduino] ERROR:HOMING1_COLLISION_PROX
+========================================================================
+!!!! EARLY COLLISION DETECTED AT PROX (A0) during M1 (CHEST) homing !!!!
+!!!! The A0 collision proximity sensor detected an incoming obstruction before the mechanical collision switch was reached. Both motors have been stopped. !!!!
+========================================================================
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+[Arduino] EARLY:COLLISION
+[SAFETY] EARLY:COLLISION — proximity sensor detected the lever and the axis was halted by the firmware before the mechanical switch was ever reached.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[Arduino] SWITCH:RELEASED
+
+[Python] Early collision detected at prox (A0) during motor 1 homing — sending emergency stop to Arduino...
+[Python] Serial port closed.
+[Python] Exited cleanly.
+
+---- Running: SHOOT3.py ----
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+[INFO] Connecting to /dev/ttyACM0 at 115200 baud ...
+Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Arduino] SYSTEM:READY
+[INFO] Handshake complete.
+
+[INFO] Running limit-switch self-test ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[INFO] Self-test passed.
+
+[INFO] Checking collision prox (A0) before shooting ...
+[Arduino] PROXC:CLEAR
+[INFO] Collision prox (A0) is clear.
+
+[INFO] Sending: shoot m1
+[Arduino] shoot success
+[INFO] ✓ shoot m1 complete
+
+[INFO] Sending: shoot m2
+[Arduino] shoot success
+[INFO] ✓ shoot m2 complete
+
+[INFO] All done.
+[INFO] Serial port closed.
+
+---- Running: trigger_y.py ----
+[camera_utils] LD2410: using stable by-id path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+Opening /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 at 256000 baud...
+[CONFIG] Capping max moving/static gate to 1 (~1500 mm) ...
+[CONFIG] Radar confirms: max moving gate=1, max static gate=1, no-one duration=2s
+
+Listening for sensor data... (Ctrl+C to stop)
+
+Seat detection band: 650-950 mm | Confirm hold: 5s | Exit debounce: 5 frames
+
+State: No target        | Moving:   610 mm (energy   0) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   610 mm (energy  66) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   610 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Static target    | Moving:   730 mm (energy  89) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   730 mm (energy  66) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   530 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  90) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  74) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  51) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  61) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  88) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  79) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  80) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  64) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  95) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  70) | Static:     0 mm (energy   1) | Detection:   550 mm
+
+Person is in front of the KIOSK
+
+---- Running: CHEST4.py ----
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786686853.046685   15862 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786686853.055766   16028 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[arducam] Stable path not found, falling back to index 0
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M1 home switch / prox-1 state before starting...
+[Arduino] HOME1:AWAY
+[Arduino] PROX1:CLEAR
+[STARTUP] M1 home switch = AWAY, Prox1 = CLEAR
+[Arduino] READY
+[E:39] Sent E:39 to Arduino
+Sent -> Chest err:  +39
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[Arduino] READY
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[Arduino] READY
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[Arduino] READY
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[Arduino] READY
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[Arduino] READY
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[Arduino] READY
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[Arduino] READY
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[Arduino] SWITCH:RELEASED
+[E:33] Sent E:33 to Arduino
+Sent -> Chest err:  +33
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[Arduino] READY
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[Arduino] READY
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:31] Sent E:31 to Arduino
+Sent -> Chest err:  +31
+[Arduino] READY
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:-62] Sent E:-62 to Arduino
+Sent -> Chest err:  -62
+[E:-63] Sent E:-63 to Arduino
+Sent -> Chest err:  -63
+[Arduino] READY
+[E:-63] Sent E:-63 to Arduino
+Sent -> Chest err:  -63
+[E:-62] Sent E:-62 to Arduino
+Sent -> Chest err:  -62
+[E:-63] Sent E:-63 to Arduino
+Sent -> Chest err:  -63
+[E:-67] Sent E:-67 to Arduino
+Sent -> Chest err:  -67
+[Arduino] READY
+[E:-72] Sent E:-72 to Arduino
+Sent -> Chest err:  -72
+[E:-77] Sent E:-77 to Arduino
+Sent -> Chest err:  -77
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[E:-77] Sent E:-77 to Arduino
+Sent -> Chest err:  -77
+[Arduino] READY
+[E:-77] Sent E:-77 to Arduino
+Sent -> Chest err:  -77
+[E:-77] Sent E:-77 to Arduino
+Sent -> Chest err:  -77
+[E:-77] Sent E:-77 to Arduino
+Sent -> Chest err:  -77
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[Arduino] READY
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[E:-77] Sent E:-77 to Arduino
+Sent -> Chest err:  -77
+[Arduino] READY
+[E:-74] Sent E:-74 to Arduino
+Sent -> Chest err:  -74
+[E:-74] Sent E:-74 to Arduino
+Sent -> Chest err:  -74
+[E:-74] Sent E:-74 to Arduino
+Sent -> Chest err:  -74
+[E:-75] Sent E:-75 to Arduino
+Sent -> Chest err:  -75
+[Arduino] READY
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[Arduino] READY
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[Arduino] SWITCH:RELEASED
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[Arduino] READY
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-76] Sent E:-76 to Arduino
+Sent -> Chest err:  -76
+[E:-75] Sent E:-75 to Arduino
+Sent -> Chest err:  -75
+[E:-75] Sent E:-75 to Arduino
+Sent -> Chest err:  -75
+[Arduino] READY
+[E:-74] Sent E:-74 to Arduino
+Sent -> Chest err:  -74
+[E:-74] Sent E:-74 to Arduino
+Sent -> Chest err:  -74
+[E:-75] Sent E:-75 to Arduino
+Sent -> Chest err:  -75
+[E:-74] Sent E:-74 to Arduino
+Sent -> Chest err:  -74
+[Arduino] READY
+[E:-68] Sent E:-68 to Arduino
+Sent -> Chest err:  -68
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[Arduino] READY
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[E:-67] Sent E:-67 to Arduino
+Sent -> Chest err:  -67
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[Arduino] READY
+[E:-66] Sent E:-66 to Arduino
+Sent -> Chest err:  -66
+[E:-67] Sent E:-67 to Arduino
+Sent -> Chest err:  -67
+[E:-68] Sent E:-68 to Arduino
+Sent -> Chest err:  -68
+[E:-67] Sent E:-67 to Arduino
+Sent -> Chest err:  -67
+[Arduino] READY
+[E:-67] Sent E:-67 to Arduino
+Sent -> Chest err:  -67
+[E:-69] Sent E:-69 to Arduino
+Sent -> Chest err:  -69
+[E:-70] Sent E:-70 to Arduino
+Sent -> Chest err:  -70
+[E:-70] Sent E:-70 to Arduino
+Sent -> Chest err:  -70
+[Arduino] READY
+[E:-70] Sent E:-70 to Arduino
+Sent -> Chest err:  -70
+[E:-71] Sent E:-71 to Arduino
+Sent -> Chest err:  -71
+[E:-71] Sent E:-71 to Arduino
+Sent -> Chest err:  -71
+[E:-70] Sent E:-70 to Arduino
+Sent -> Chest err:  -70
+[Arduino] READY
+[E:-65] Sent E:-65 to Arduino
+Sent -> Chest err:  -65
+[E:-59] Sent E:-59 to Arduino
+Sent -> Chest err:  -59
+[E:-49] Sent E:-49 to Arduino
+Sent -> Chest err:  -49
+[E:-42] Sent E:-42 to Arduino
+Sent -> Chest err:  -42
+[E:-34] Sent E:-34 to Arduino
+Sent -> Chest err:  -34
+[Arduino] READY
+[E:-27] Sent E:-27 to Arduino
+Sent -> Chest err:  -27
+[E:-20] Sent E:-20 to Arduino
+Sent -> Chest err:  -20
+[E:-10] Sent E:-10 to Arduino
+Sent -> Chest err:  -10
+-----Image captured: 'Alined_CHEST_.jpg'-----
+[E:-6] Sent E:-6 to Arduino
+Sent -> Chest err:   -6
+[post-capture] Sent E:0 to Arduino
+*****Alignment achieved. Displaying for 3 seconds*****
+[Arduino] READY
+[Arduino] SWITCH:RELEASED
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+*****Exiting display loop*****
+Normal exit.
+[shutdown] Sent E:0 to Arduino
+[shutdown] Serial port closed.
+[serial_reader] TypeError during shutdown — exiting thread.
+[shutdown] serial_reader thread exited cleanly.
+
+---- Running: EYE4.py ----
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+[logitech] Stable path not found, falling back to index 2
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786686874.758145   16083 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786686874.766699   16245 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M2 home switch / prox-2 state before starting...
+[Arduino] HOME2:AWAY
+[Arduino] PROX2:CLEAR
+[STARTUP] M2 home switch = AWAY, Prox2 = CLEAR
+[Arduino] READY
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+[Arduino] READY
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+[Arduino] READY
+Sent F:-53 to Arduino
+Sent -> Eye err:  -53
+Sent F:-53 to Arduino
+Sent -> Eye err:  -53
+Sent F:-53 to Arduino
+Sent -> Eye err:  -53
+Sent F:-53 to Arduino
+Sent -> Eye err:  -53
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+[Arduino] READY
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+Sent F:-52 to Arduino
+Sent -> Eye err:  -52
+Sent F:-54 to Arduino
+Sent -> Eye err:  -54
+Sent F:-57 to Arduino
+Sent -> Eye err:  -57
+Sent F:-59 to Arduino
+Sent -> Eye err:  -59
+Sent F:-60 to Arduino
+Sent -> Eye err:  -60
+Sent F:-59 to Arduino
+Sent -> Eye err:  -59
+Sent F:-57 to Arduino
+Sent -> Eye err:  -57
+[Arduino] READY
+Sent F:-51 to Arduino
+Sent -> Eye err:  -51
+Sent F:-44 to Arduino
+Sent -> Eye err:  -44
+Sent F:-37 to Arduino
+Sent -> Eye err:  -37
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-25 to Arduino
+Sent -> Eye err:  -25
+Sent F:-18 to Arduino
+Sent -> Eye err:  -18
+Sent F:-12 to Arduino
+Sent -> Eye err:  -12
+[Arduino] READY
+-----Image captured: 'Alined_EYE_.jpg'-----
+Sent F:-6 to Arduino
+Sent -> Eye err:   -6
+[post-capture] Sent F:0 to Arduino
+*****Alignment achieved. Displaying for 4 seconds*****
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] SWITCH:RELEASED
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+*****Exiting display loop*****
+Normal exit.
+[shutdown] serial_reader thread exited cleanly.
+[shutdown] Sent F:0 to Arduino
+[shutdown] Serial port closed.
+
+==================================================================
+KIOSK RUN COMPLETED SUCCESSFULLY: 2026-08-14 11:24:44
+==================================================================
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 11:25:37
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.221] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] DONE:HOME1
+[Python] Confirmed: DONE:HOME1
+[Python] Motor 1 returned to home position.
+[Python] Motor 1 homing was stopped by the PROXIMITY SENSOR (normal). Limit switch was not reached — both sensors healthy.
+
+[Python] Sending: 'home2'
+[Arduino] STATUS:HOMING2_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] DONE:HOME2
+[Python] Confirmed: DONE:HOME2
+[Python] Motor 2 returned to home position.
+[Python] Motor 2 homing was stopped by the PROXIMITY SENSOR (normal). Limit switch was not reached — both sensors healthy.
+
+[Python] Both motors are back at their home positions.
+
+========================================================================
+HARDWARE REPORT
+========================================================================
+  Motor 1 (CHEST):
+    Home limit switch : OK   [interfaced, healthy — no replacement needed]
+    Limit switch      : not reached (prox stopped the axis first — correct)
+    Prox sensor 1     : working
+  Motor 2 (EYES):
+    Home limit switch : OK   [interfaced, healthy — no replacement needed]
+    Limit switch      : not reached (prox stopped the axis first — correct)
+    Prox sensor 2     : working
+========================================================================
+
+[Python] Serial port closed. Exiting.
+
+---- Running: SHOOT3.py ----
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+[INFO] Connecting to /dev/ttyACM0 at 115200 baud ...
+Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Arduino] SYSTEM:READY
+[INFO] Handshake complete.
+
+[INFO] Running limit-switch self-test ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[INFO] Self-test passed.
+
+[INFO] Checking collision prox (A0) before shooting ...
+[Arduino] PROXC:CLEAR
+[INFO] Collision prox (A0) is clear.
+
+[INFO] Sending: shoot m1
+[Arduino] shoot success
+[INFO] ✓ shoot m1 complete
+
+[INFO] Sending: shoot m2
+[Arduino] shoot success
+[INFO] ✓ shoot m2 complete
+
+[INFO] All done.
+[INFO] Serial port closed.
+
+---- Running: trigger_y.py ----
+[camera_utils] LD2410: using stable by-id path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+Opening /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 at 256000 baud...
+[CONFIG] Capping max moving/static gate to 1 (~1500 mm) ...
+[CONFIG] Radar confirms: max moving gate=1, max static gate=1, no-one duration=2s
+
+Listening for sensor data... (Ctrl+C to stop)
+
+Seat detection band: 650-950 mm | Confirm hold: 5s | Exit debounce: 5 frames
+
+State: No target        | Moving:   700 mm (energy   0) | Static:     0 mm (energy   0) | Detection:   510 mm
+State: No target        | Moving:   700 mm (energy  59) | Static:     0 mm (energy   0) | Detection:   510 mm
+State: No target        | Moving:   700 mm (energy  83) | Static:     0 mm (energy   1) | Detection:   510 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   420 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   680 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   600 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   640 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Static target    | Moving:   730 mm (energy  88) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Static target    | Moving:   730 mm (energy  75) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  79) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  57) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  56) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  81) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  87) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  74) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  71) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  99) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  64) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  61) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: No target        | Moving:   730 mm (energy   0) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: No target        | Moving:   730 mm (energy  76) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy  80) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy  88) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy  77) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   730 mm (energy  61) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy  63) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy  51) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  56) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  87) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  84) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  85) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  66) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy  81) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   0) | Detection:   550 mm
+State: Static target    | Moving:   730 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   730 mm (energy  79) | Static:     0 mm (energy   0) | Detection:   320 mm
+
+Person is in front of the KIOSK
+
+---- Running: CHEST4.py ----
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786686982.299187   16441 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786686982.306865   16606 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+[arducam] Stable path not found, falling back to index 0
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M1 home switch / prox-1 state before starting...
+[Arduino] HOME1:AWAY
+[Arduino] PROX1:CLEAR
+[STARTUP] M1 home switch = AWAY, Prox1 = CLEAR
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:26] Sent E:26 to Arduino
+Sent -> Chest err:  +26
+[E:34] Sent E:34 to Arduino
+Sent -> Chest err:  +34
+[Arduino] READY
+[E:51] Sent E:51 to Arduino
+Sent -> Chest err:  +51
+[E:49] Sent E:49 to Arduino
+Sent -> Chest err:  +49
+[E:39] Sent E:39 to Arduino
+Sent -> Chest err:  +39
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:22] Sent E:22 to Arduino
+Sent -> Chest err:  +22
+-----Image captured: 'Alined_CHEST_.jpg'-----
+[E:1] Sent E:1 to Arduino
+Sent -> Chest err:   +1
+[post-capture] Sent E:0 to Arduino
+*****Alignment achieved. Displaying for 3 seconds*****
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] SWITCH:RELEASED
+[Arduino] READY
+[Arduino] READY
+*****Exiting display loop*****
+Normal exit.
+[shutdown] Sent E:0 to Arduino
+[shutdown] Serial port closed.
+[serial_reader] TypeError during shutdown — exiting thread.
+[shutdown] serial_reader thread exited cleanly.
+
+---- Running: EYE4.py ----
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+[logitech] Stable path not found, falling back to index 2
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786686992.296101   16649 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786686992.304410   16811 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M2 home switch / prox-2 state before starting...
+[Arduino] HOME2:AWAY
+[Arduino] PROX2:CLEAR
+[STARTUP] M2 home switch = AWAY, Prox2 = CLEAR
+[Arduino] READY
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+[Arduino] READY
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-68 to Arduino
+Sent -> Eye err:  -68
+Sent F:-68 to Arduino
+Sent -> Eye err:  -68
+Sent F:-68 to Arduino
+Sent -> Eye err:  -68
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+[Arduino] READY
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+[Arduino] READY
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-69 to Arduino
+Sent -> Eye err:  -69
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+[Arduino] READY
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-71 to Arduino
+Sent -> Eye err:  -71
+[Arduino] READY
+Sent F:-71 to Arduino
+Sent -> Eye err:  -71
+Sent F:-71 to Arduino
+Sent -> Eye err:  -71
+Sent F:-71 to Arduino
+Sent -> Eye err:  -71
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+[Arduino] READY
+[Arduino] EARLY:COLLISION
+Sent F:-70 to Arduino
+Sent -> Eye err:  -70
+!!!! EARLY COLLISION mid-execution — stopping system !!!!
+[collision-prox-early] Sent F:0 to Arduino
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] SWITCH:RELEASED
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+!!!! Terminating after early collision warning (A0 prox) !!!!
+[shutdown] serial_reader thread exited cleanly.
+[shutdown] Sent F:0 to Arduino
+[shutdown] Serial port closed.
+
+==================================================================
+KIOSK RUN COMPLETED SUCCESSFULLY: 2026-08-14 11:26:42
+==================================================================
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 11:28:53
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.241] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] STOP:OK
+[Arduino] EARLY:COLLISION_PROX_A0
+[SAFETY] EARLY:COLLISION_PROX_A0 — the A0 collision proximity sensor detected an incoming obstruction before the mechanical collision switch was reached. Both motors were stopped by the firmware.
+[Arduino] ERROR:HOMING1_COLLISION_PROX
+========================================================================
+!!!! EARLY COLLISION DETECTED AT PROX (A0) during M1 (CHEST) homing !!!!
+!!!! The A0 collision proximity sensor detected an incoming obstruction before the mechanical collision switch was reached. Both motors have been stopped. !!!!
+========================================================================
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+[Arduino] EARLY:COLLISION
+[SAFETY] EARLY:COLLISION — proximity sensor detected the lever and the axis was halted by the firmware before the mechanical switch was ever reached.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[Arduino] SWITCH:RELEASED
+
+[Python] Early collision detected at prox (A0) during motor 1 homing — sending emergency stop to Arduino...
+[Python] Serial port closed.
+[Python] Exited cleanly.
+
+---- Running: SHOOT3.py ----
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+[INFO] Connecting to /dev/ttyACM0 at 115200 baud ...
+Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Arduino] SYSTEM:READY
+[INFO] Handshake complete.
+
+[INFO] Running limit-switch self-test ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[INFO] Self-test passed.
+
+[INFO] Checking collision prox (A0) before shooting ...
+[Arduino] PROXC:CLEAR
+[INFO] Collision prox (A0) is clear.
+
+[INFO] Sending: shoot m1
+[Arduino] STOP:OK
+[Arduino] EARLY:COLLISION_PROX_A0
+[Arduino] ERROR:SHOOT1_COLLISION_PROX
+[ERROR] Collision detected during shoot m1: proximity sensor (A0) — obstruction caught before mechanical contact.
+[ERROR] shoot m1 failed. Sending STOP and exiting.
+[INFO] Serial port closed.
+
+==================================================================
+KIOSK RUN FAILED: 2026-08-14 11:29:14
+Failed at step : SHOOT3.py
+Exit code      : 1
+==================================================================
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 11:29:34
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.221] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] DONE:HOME1
+[Python] Confirmed: DONE:HOME1
+[Python] Motor 1 returned to home position.
+[Python] Motor 1 homing was stopped by the PROXIMITY SENSOR (normal). Limit switch was not reached — both sensors healthy.
+
+[Python] Sending: 'home2'
+[Arduino] STATUS:HOMING2_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] DONE:HOME2
+[Python] Confirmed: DONE:HOME2
+[Python] Motor 2 returned to home position.
+[Python] Motor 2 homing was stopped by the PROXIMITY SENSOR (normal). Limit switch was not reached — both sensors healthy.
+
+[Python] Both motors are back at their home positions.
+
+========================================================================
+HARDWARE REPORT
+========================================================================
+  Motor 1 (CHEST):
+    Home limit switch : OK   [interfaced, healthy — no replacement needed]
+    Limit switch      : not reached (prox stopped the axis first — correct)
+    Prox sensor 1     : working
+  Motor 2 (EYES):
+    Home limit switch : OK   [interfaced, healthy — no replacement needed]
+    Limit switch      : not reached (prox stopped the axis first — correct)
+    Prox sensor 2     : working
+========================================================================
+
+[Python] Serial port closed. Exiting.
+
+---- Running: SHOOT3.py ----
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+[INFO] Connecting to /dev/ttyACM0 at 115200 baud ...
+Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Arduino] SYSTEM:READY
+[INFO] Handshake complete.
+
+[INFO] Running limit-switch self-test ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[INFO] Self-test passed.
+
+[INFO] Checking collision prox (A0) before shooting ...
+[Arduino] PROXC:CLEAR
+[INFO] Collision prox (A0) is clear.
+
+[INFO] Sending: shoot m1
+[Arduino] shoot success
+[INFO] ✓ shoot m1 complete
+
+[INFO] Sending: shoot m2
+[Arduino] shoot success
+[INFO] ✓ shoot m2 complete
+
+[INFO] All done.
+[INFO] Serial port closed.
+
+---- Running: trigger_y.py ----
+[camera_utils] LD2410: using stable by-id path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+Opening /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 at 256000 baud...
+[CONFIG] Capping max moving/static gate to 1 (~1500 mm) ...
+[CONFIG] Radar confirms: max moving gate=1, max static gate=1, no-one duration=2s
+
+Listening for sensor data... (Ctrl+C to stop)
+
+Seat detection band: 650-950 mm | Confirm hold: 5s | Exit debounce: 5 frames
+
+State: No target        | Moving:   750 mm (energy   0) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: No target        | Moving:   750 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   700 mm (energy  61) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   530 mm (energy  84) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   600 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   430 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   610 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   610 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   660 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   550 mm (energy  56) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Static target    | Moving:   550 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   0) | Detection:   310 mm
+State: Static target    | Moving:   550 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   0) | Detection:   310 mm
+State: Static target    | Moving:   550 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   550 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  55) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   750 mm (energy  61) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   750 mm (energy  73) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   750 mm (energy  58) | Static:     0 mm (energy   0) | Detection:   480 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   520 mm
+State: Moving target    | Moving:   750 mm (energy  95) | Static:     0 mm (energy   0) | Detection:   540 mm
+State: Moving target    | Moving:   750 mm (energy  66) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   750 mm (energy  63) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  86) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  56) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  70) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  96) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  77) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  80) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy  82) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   750 mm (energy  66) | Static:     0 mm (energy   0) | Detection:   430 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   750 mm (energy  55) | Static:     0 mm (energy   0) | Detection:   480 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   750 mm (energy  62) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  69) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  84) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  79) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  82) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  70) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  84) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   750 mm (energy  70) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   750 mm (energy  66) | Static:     0 mm (energy   0) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   750 mm (energy  74) | Static:     0 mm (energy   0) | Detection:   490 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   750 mm (energy  87) | Static:     0 mm (energy   1) | Detection:   530 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   530 mm
+State: Moving target    | Moving:   750 mm (energy  58) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  74) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy  77) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   750 mm (energy  64) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  84) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  67) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  64) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  86) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  99) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  89) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy  52) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   0) | Detection:   430 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   530 mm
+
+Person is in front of the KIOSK
+
+---- Running: CHEST4.py ----
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786687234.170245   17204 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786687234.178578   17371 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[arducam] Stable path not found, falling back to index 0
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M1 home switch / prox-1 state before starting...
+[Arduino] HOME1:AWAY
+[Arduino] PROX1:CLEAR
+[STARTUP] M1 home switch = AWAY, Prox1 = CLEAR
+[Arduino] READY
+[E:-89] Sent E:-89 to Arduino
+Sent -> Chest err:  -89
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[Arduino] READY
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[Arduino] READY
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-94] Sent E:-94 to Arduino
+Sent -> Chest err:  -94
+[Arduino] READY
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-94] Sent E:-94 to Arduino
+Sent -> Chest err:  -94
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[Arduino] READY
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-94] Sent E:-94 to Arduino
+Sent -> Chest err:  -94
+[Arduino] READY
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-94] Sent E:-94 to Arduino
+Sent -> Chest err:  -94
+[E:-94] Sent E:-94 to Arduino
+Sent -> Chest err:  -94
+[E:-94] Sent E:-94 to Arduino
+Sent -> Chest err:  -94
+[E:-93] Sent E:-93 to Arduino
+Sent -> Chest err:  -93
+[Arduino] READY
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-95] Sent E:-95 to Arduino
+Sent -> Chest err:  -95
+[Arduino] READY
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-98] Sent E:-98 to Arduino
+Sent -> Chest err:  -98
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[Arduino] READY
+[E:-98] Sent E:-98 to Arduino
+Sent -> Chest err:  -98
+[E:-98] Sent E:-98 to Arduino
+Sent -> Chest err:  -98
+[E:-97] Sent E:-97 to Arduino
+Sent -> Chest err:  -97
+[E:-96] Sent E:-96 to Arduino
+Sent -> Chest err:  -96
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:64] Sent E:64 to Arduino
+Sent -> Chest err:  +64
+[E:57] Sent E:57 to Arduino
+Sent -> Chest err:  +57
+[Arduino] SWITCH:RELEASED
+[E:57] Sent E:57 to Arduino
+Sent -> Chest err:  +57
+[E:59] Sent E:59 to Arduino
+Sent -> Chest err:  +59
+[E:68] Sent E:68 to Arduino
+Sent -> Chest err:  +68
+[Arduino] READY
+[E:72] Sent E:72 to Arduino
+Sent -> Chest err:  +72
+[E:78] Sent E:78 to Arduino
+Sent -> Chest err:  +78
+[E:88] Sent E:88 to Arduino
+Sent -> Chest err:  +88
+[E:93] Sent E:93 to Arduino
+Sent -> Chest err:  +93
+[E:88] Sent E:88 to Arduino
+Sent -> Chest err:  +88
+[Arduino] READY
+[E:102] Sent E:102 to Arduino
+Sent -> Chest err: +102
+[E:108] Sent E:108 to Arduino
+Sent -> Chest err: +108
+[E:80] Sent E:80 to Arduino
+Sent -> Chest err:  +80
+[E:76] Sent E:76 to Arduino
+Sent -> Chest err:  +76
+[Arduino] READY
+[E:41] Sent E:41 to Arduino
+Sent -> Chest err:  +41
+[E:36] Sent E:36 to Arduino
+Sent -> Chest err:  +36
+[E:37] Sent E:37 to Arduino
+Sent -> Chest err:  +37
+[E:32] Sent E:32 to Arduino
+Sent -> Chest err:  +32
+[Arduino] READY
+[E:28] Sent E:28 to Arduino
+Sent -> Chest err:  +28
+[E:22] Sent E:22 to Arduino
+Sent -> Chest err:  +22
+[E:16] Sent E:16 to Arduino
+Sent -> Chest err:  +16
+[E:17] Sent E:17 to Arduino
+Sent -> Chest err:  +17
+[Arduino] READY
+[E:11] Sent E:11 to Arduino
+Sent -> Chest err:  +11
+-----Image captured: 'Alined_CHEST_.jpg'-----
+[E:-8] Sent E:-8 to Arduino
+Sent -> Chest err:   -8
+[post-capture] Sent E:0 to Arduino
+*****Alignment achieved. Displaying for 3 seconds*****
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] SWITCH:RELEASED
+[Arduino] READY
+*****Exiting display loop*****
+Normal exit.
+[shutdown] Sent E:0 to Arduino
+[shutdown] Serial port closed.
+[serial_reader] TypeError during shutdown — exiting thread.
+[shutdown] serial_reader thread exited cleanly.
+
+---- Running: EYE4.py ----
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+[logitech] Stable path not found, falling back to index 2
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786687248.648305   17428 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786687248.655840   17591 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M2 home switch / prox-2 state before starting...
+[Arduino] HOME2:AWAY
+[Arduino] PROX2:CLEAR
+[STARTUP] M2 home switch = AWAY, Prox2 = CLEAR
+[Arduino] READY
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+[Arduino] READY
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+[Arduino] READY
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-31 to Arduino
+Sent -> Eye err:  -31
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+[Arduino] READY
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-30 to Arduino
+Sent -> Eye err:  -30
+Sent F:-29 to Arduino
+Sent -> Eye err:  -29
+Sent F:-28 to Arduino
+Sent -> Eye err:  -28
+Sent F:-26 to Arduino
+Sent -> Eye err:  -26
+[Arduino] READY
+Sent F:-24 to Arduino
+Sent -> Eye err:  -24
+Sent F:-20 to Arduino
+Sent -> Eye err:  -20
+Sent F:-17 to Arduino
+Sent -> Eye err:  -17
+Sent F:-12 to Arduino
+Sent -> Eye err:  -12
+Sent F:-10 to Arduino
+Sent -> Eye err:  -10
+Sent F:-9 to Arduino
+Sent -> Eye err:   -9
+-----Image captured: 'Alined_EYE_.jpg'-----
+Sent F:-7 to Arduino
+Sent -> Eye err:   -7
+[post-capture] Sent F:0 to Arduino
+*****Alignment achieved. Displaying for 4 seconds*****
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] SWITCH:RELEASED
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+*****Exiting display loop*****
+Normal exit.
+[shutdown] serial_reader thread exited cleanly.
+[shutdown] Sent F:0 to Arduino
+[shutdown] Serial port closed.
+
+==================================================================
+KIOSK RUN COMPLETED SUCCESSFULLY: 2026-08-14 11:30:58
+==================================================================
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 17:17:30
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.219] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] ERROR:HOMING1_NO_HOME_FOUND
+========================================================================
+!!!! M1 (CHEST) HOME NOT FOUND — HOMING ABORTED !!!!
+!!!! The axis travelled its full configured range without reaching home. !!!!
+!!!! It is stopped where it ran out — this is NOT the home position. !!!!
+     Possible causes:
+       - Wrong homing direction (M1_HOME_DIR)
+       - Motor not stepping — driver disabled, stalled or unpowered
+       - Coupling or belt slipped
+       - Axis obstructed before reaching the lever
+       - BOTH prox 1 and the M1 limit switch failed to trigger
+       - HOME_MAX_TRAVEL_MM set shorter than the real axis travel
+========================================================================
+[Arduino] SWITCH:RELEASED
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+
+[Python] Motor 1 home not found within configured travel — sending emergency stop to Arduino...
+[Python] Serial port closed.
+[Python] Exited cleanly.
+
+==================================================================
+KIOSK RUN FAILED: 2026-08-14 17:18:04
+Failed at step : HOME4.py
+Exit code      : 2
+==================================================================
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 17:19:09
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.223] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] DONE:HOME1
+[Python] Confirmed: DONE:HOME1
+[Python] Motor 1 returned to home position.
+[Python] Motor 1 homing was stopped by the PROXIMITY SENSOR (normal). Limit switch was not reached — both sensors healthy.
+
+[Python] Sending: 'home2'
+[Arduino] STATUS:HOMING2_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] DONE:HOME2
+[Python] Confirmed: DONE:HOME2
+[Python] Motor 2 returned to home position.
+[Python] Motor 2 homing was stopped by the PROXIMITY SENSOR (normal). Limit switch was not reached — both sensors healthy.
+
+[Python] Both motors are back at their home positions.
+
+========================================================================
+HARDWARE REPORT
+========================================================================
+  Motor 1 (CHEST):
+    Home limit switch : OK   [interfaced, healthy — no replacement needed]
+    Limit switch      : not reached (prox stopped the axis first — correct)
+    Prox sensor 1     : working
+  Motor 2 (EYES):
+    Home limit switch : OK   [interfaced, healthy — no replacement needed]
+    Limit switch      : not reached (prox stopped the axis first — correct)
+    Prox sensor 2     : working
+========================================================================
+
+[Python] Serial port closed. Exiting.
+
+---- Running: SHOOT3.py ----
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+[INFO] Connecting to /dev/ttyACM0 at 115200 baud ...
+Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Arduino] SYSTEM:READY
+[INFO] Handshake complete.
+
+[INFO] Running limit-switch self-test ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[INFO] Self-test passed.
+
+[INFO] Checking collision prox (A0) before shooting ...
+[Arduino] PROXC:CLEAR
+[INFO] Collision prox (A0) is clear.
+
+[INFO] Sending: shoot m1
+[Arduino] shoot success
+[INFO] ✓ shoot m1 complete
+
+[INFO] Sending: shoot m2
+[Arduino] shoot success
+[INFO] ✓ shoot m2 complete
+
+[INFO] All done.
+[INFO] Serial port closed.
+
+---- Running: trigger_y.py ----
+[camera_utils] LD2410: using stable by-id path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+Opening /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0 at 256000 baud...
+[CONFIG] Capping max moving/static gate to 1 (~1500 mm) ...
+[CONFIG] Radar confirms: max moving gate=1, max static gate=1, no-one duration=2s
+
+Listening for sensor data... (Ctrl+C to stop)
+
+Seat detection band: 650-1050 mm | Confirm hold: 5s | Exit debounce: 5 frames
+
+State: Moving target    | Moving:   530 mm (energy  56) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   530 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   660 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   490 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   470 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   680 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   300 mm (energy  52) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Static target    | Moving:   300 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   300 mm (energy  55) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   300 mm (energy  83) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   300 mm (energy  57) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   600 mm (energy  76) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Static target    | Moving:   720 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   720 mm (energy  51) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   720 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   720 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy  92) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy  75) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   650 mm (energy  51) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   650 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: No target        | Moving:   650 mm (energy   0) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy  85) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   430 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   690 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  70) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  89) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   450 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   420 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   380 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   710 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   610 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   640 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   640 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   630 mm (energy  91) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   750 mm (energy  86) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   750 mm (energy  68) | Static:     0 mm (energy   0) | Detection:   510 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   510 mm
+State: Moving target    | Moving:   710 mm (energy  96) | Static:     0 mm (energy   0) | Detection:   360 mm
+State: Moving target    | Moving:   710 mm (energy  53) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   670 mm (energy  63) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   670 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   650 mm (energy  73) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   700 mm (energy  67) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   660 mm (energy  77) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   660 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   660 mm (energy  55) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   660 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: No target        | Moving:   660 mm (energy   0) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   660 mm (energy  93) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   660 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy   0) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   0) | Detection:     0 mm
+State: Moving target    | Moving:   530 mm (energy  55) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   640 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   660 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   630 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   480 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   500 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   410 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   500 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Moving target    | Moving:   680 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   470 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   570 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   680 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Moving target    | Moving:   380 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   410 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   430 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   590 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   600 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   420 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   480 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   660 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   390 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   510 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Static target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Static target    | Moving:   740 mm (energy   0) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   0) | Detection:   530 mm
+State: Static target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Static target    | Moving:   740 mm (energy  97) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   300 mm (energy  66) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Static target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Static target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy  94) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Static target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   630 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   680 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   480 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   490 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   470 mm
+State: Moving target    | Moving:   400 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   390 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   600 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   470 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   630 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   590 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   630 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   500 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   480 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   460 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Moving target    | Moving:   490 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   390 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   600 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   490 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   400 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   300 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   690 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   670 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   580 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   390 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   420 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   330 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   390 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:     0 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   310 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Moving target    | Moving:   630 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   450 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   660 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   500 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   550 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   430 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   540 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   650 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   460 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Static target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   740 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   490 mm
+State: Moving target    | Moving:   560 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   480 mm
+State: Moving target    | Moving:   380 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   420 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   380 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   350 mm
+State: Moving target    | Moving:   620 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   730 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   400 mm
+State: Moving target    | Moving:   300 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   360 mm
+State: Moving target    | Moving:   440 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   320 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   340 mm
+State: Static target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   370 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   390 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   660 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   530 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   720 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   430 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   440 mm
+State: Moving target    | Moving:   430 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   610 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   520 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   410 mm
+State: Moving target    | Moving:   700 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   420 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   450 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   500 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   750 mm (energy  56) | Static:     0 mm (energy   1) | Detection:   550 mm
+State: Moving target    | Moving:   750 mm (energy 100) | Static:     0 mm (energy   1) | Detection:   550 mm
+
+Person is in front of the KIOSK
+
+---- Running: CHEST4.py ----
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786708228.509682   35317 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786708228.521310   35484 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+[arducam] Stable path not found, falling back to index 1
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M1 home switch / prox-1 state before starting...
+[Arduino] HOME1:AWAY
+[Arduino] PROX1:CLEAR
+[STARTUP] M1 home switch = AWAY, Prox1 = CLEAR
+[Arduino] READY
+[E:58] Sent E:58 to Arduino
+Sent -> Chest err:  +58
+[E:57] Sent E:57 to Arduino
+Sent -> Chest err:  +57
+[E:57] Sent E:57 to Arduino
+Sent -> Chest err:  +57
+[E:57] Sent E:57 to Arduino
+Sent -> Chest err:  +57
+[Arduino] READY
+[E:61] Sent E:61 to Arduino
+Sent -> Chest err:  +61
+[E:65] Sent E:65 to Arduino
+Sent -> Chest err:  +65
+[E:68] Sent E:68 to Arduino
+Sent -> Chest err:  +68
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:65] Sent E:65 to Arduino
+Sent -> Chest err:  +65
+[Arduino] READY
+[E:65] Sent E:65 to Arduino
+Sent -> Chest err:  +65
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:293] Sent E:293 to Arduino
+Sent -> Chest err: +293
+[E:269] Sent E:269 to Arduino
+Sent -> Chest err: +269
+[E:275] Sent E:275 to Arduino
+Sent -> Chest err: +275
+[E:316] Sent E:316 to Arduino
+Sent -> Chest err: +316
+[Arduino] READY
+[E:293] Sent E:293 to Arduino
+Sent -> Chest err: +293
+[E:300] Sent E:300 to Arduino
+Sent -> Chest err: +300
+[E:285] Sent E:285 to Arduino
+Sent -> Chest err: +285
+[E:277] Sent E:277 to Arduino
+Sent -> Chest err: +277
+[E:267] Sent E:267 to Arduino
+Sent -> Chest err: +267
+[Arduino] READY
+[E:270] Sent E:270 to Arduino
+Sent -> Chest err: +270
+[E:264] Sent E:264 to Arduino
+Sent -> Chest err: +264
+[E:244] Sent E:244 to Arduino
+Sent -> Chest err: +244
+[E:235] Sent E:235 to Arduino
+Sent -> Chest err: +235
+[E:232] Sent E:232 to Arduino
+Sent -> Chest err: +232
+[Arduino] READY
+[E:228] Sent E:228 to Arduino
+Sent -> Chest err: +228
+[E:211] Sent E:211 to Arduino
+Sent -> Chest err: +211
+[E:201] Sent E:201 to Arduino
+Sent -> Chest err: +201
+[E:195] Sent E:195 to Arduino
+Sent -> Chest err: +195
+[Arduino] READY
+[E:192] Sent E:192 to Arduino
+Sent -> Chest err: +192
+[E:188] Sent E:188 to Arduino
+Sent -> Chest err: +188
+[E:189] Sent E:189 to Arduino
+Sent -> Chest err: +189
+[E:187] Sent E:187 to Arduino
+Sent -> Chest err: +187
+[Arduino] READY
+[E:187] Sent E:187 to Arduino
+Sent -> Chest err: +187
+[E:187] Sent E:187 to Arduino
+Sent -> Chest err: +187
+[E:185] Sent E:185 to Arduino
+Sent -> Chest err: +185
+[E:184] Sent E:184 to Arduino
+Sent -> Chest err: +184
+[Arduino] READY
+[E:176] Sent E:176 to Arduino
+Sent -> Chest err: +176
+[E:173] Sent E:173 to Arduino
+Sent -> Chest err: +173
+[Arduino] SWITCH:RELEASED
+[E:173] Sent E:173 to Arduino
+Sent -> Chest err: +173
+[E:170] Sent E:170 to Arduino
+Sent -> Chest err: +170
+[Arduino] READY
+[E:161] Sent E:161 to Arduino
+Sent -> Chest err: +161
+[E:164] Sent E:164 to Arduino
+Sent -> Chest err: +164
+[E:161] Sent E:161 to Arduino
+Sent -> Chest err: +161
+[E:157] Sent E:157 to Arduino
+Sent -> Chest err: +157
+[E:153] Sent E:153 to Arduino
+Sent -> Chest err: +153
+[Arduino] READY
+[E:143] Sent E:143 to Arduino
+Sent -> Chest err: +143
+[E:138] Sent E:138 to Arduino
+Sent -> Chest err: +138
+[E:126] Sent E:126 to Arduino
+Sent -> Chest err: +126
+[E:126] Sent E:126 to Arduino
+Sent -> Chest err: +126
+[Arduino] READY
+[E:123] Sent E:123 to Arduino
+Sent -> Chest err: +123
+[E:128] Sent E:128 to Arduino
+Sent -> Chest err: +128
+[E:139] Sent E:139 to Arduino
+Sent -> Chest err: +139
+[E:146] Sent E:146 to Arduino
+Sent -> Chest err: +146
+[Arduino] READY
+[E:151] Sent E:151 to Arduino
+Sent -> Chest err: +151
+[E:159] Sent E:159 to Arduino
+Sent -> Chest err: +159
+[E:159] Sent E:159 to Arduino
+Sent -> Chest err: +159
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:73] Sent E:73 to Arduino
+Sent -> Chest err:  +73
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[Arduino] READY
+[E:0] Sent E:0 to Arduino
+Sent -> Chest err:   +0
+[E:-67] Sent E:-67 to Arduino
+Sent -> Chest err:  -67
+[E:-75] Sent E:-75 to Arduino
+Sent -> Chest err:  -75
+[E:-78] Sent E:-78 to Arduino
+Sent -> Chest err:  -78
+[Arduino] READY
+[E:-79] Sent E:-79 to Arduino
+Sent -> Chest err:  -79
+[E:-81] Sent E:-81 to Arduino
+Sent -> Chest err:  -81
+[E:-83] Sent E:-83 to Arduino
+Sent -> Chest err:  -83
+[E:-84] Sent E:-84 to Arduino
+Sent -> Chest err:  -84
+[E:-86] Sent E:-86 to Arduino
+Sent -> Chest err:  -86
+[Arduino] READY
+[E:-87] Sent E:-87 to Arduino
+Sent -> Chest err:  -87
+[E:-86] Sent E:-86 to Arduino
+Sent -> Chest err:  -86
+[E:-85] Sent E:-85 to Arduino
+Sent -> Chest err:  -85
+[E:-85] Sent E:-85 to Arduino
+Sent -> Chest err:  -85
+[Arduino] READY
+[E:-83] Sent E:-83 to Arduino
+Sent -> Chest err:  -83
+[E:-83] Sent E:-83 to Arduino
+Sent -> Chest err:  -83
+[E:-82] Sent E:-82 to Arduino
+Sent -> Chest err:  -82
+[E:-80] Sent E:-80 to Arduino
+Sent -> Chest err:  -80
+[Arduino] READY
+[E:-82] Sent E:-82 to Arduino
+Sent -> Chest err:  -82
+[Arduino] SWITCH:RELEASED
+[E:-81] Sent E:-81 to Arduino
+Sent -> Chest err:  -81
+[E:-75] Sent E:-75 to Arduino
+Sent -> Chest err:  -75
+[E:-64] Sent E:-64 to Arduino
+Sent -> Chest err:  -64
+[Arduino] READY
+[E:-55] Sent E:-55 to Arduino
+Sent -> Chest err:  -55
+[E:-52] Sent E:-52 to Arduino
+Sent -> Chest err:  -52
+[E:-44] Sent E:-44 to Arduino
+Sent -> Chest err:  -44
+[E:-39] Sent E:-39 to Arduino
+Sent -> Chest err:  -39
+[Arduino] READY
+[E:-37] Sent E:-37 to Arduino
+Sent -> Chest err:  -37
+[E:-36] Sent E:-36 to Arduino
+Sent -> Chest err:  -36
+[E:-34] Sent E:-34 to Arduino
+Sent -> Chest err:  -34
+[E:-30] Sent E:-30 to Arduino
+Sent -> Chest err:  -30
+[Arduino] READY
+[E:-27] Sent E:-27 to Arduino
+Sent -> Chest err:  -27
+[E:-26] Sent E:-26 to Arduino
+Sent -> Chest err:  -26
+[E:-22] Sent E:-22 to Arduino
+Sent -> Chest err:  -22
+[E:-17] Sent E:-17 to Arduino
+Sent -> Chest err:  -17
+[E:-16] Sent E:-16 to Arduino
+Sent -> Chest err:  -16
+[E:-12] Sent E:-12 to Arduino
+Sent -> Chest err:  -12
+[Arduino] READY
+[E:-9] Sent E:-9 to Arduino
+Sent -> Chest err:   -9
+[E:-11] Sent E:-11 to Arduino
+Sent -> Chest err:  -11
+[E:-10] Sent E:-10 to Arduino
+Sent -> Chest err:  -10
+[E:-9] Sent E:-9 to Arduino
+Sent -> Chest err:   -9
+[Arduino] READY
+-----Image captured: 'Alined_CHEST_.jpg'-----
+[E:-8] Sent E:-8 to Arduino
+Sent -> Chest err:   -8
+[post-capture] Sent E:0 to Arduino
+*****Alignment achieved. Displaying for 3 seconds*****
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] READY
+[Arduino] SWITCH:RELEASED
+[Arduino] READY
+*****Exiting display loop*****
+Normal exit.
+[shutdown] Sent E:0 to Arduino
+[shutdown] Serial port closed.
+[serial_reader] TypeError during shutdown — exiting thread.
+[shutdown] serial_reader thread exited cleanly.
+
+---- Running: EYE4.py ----
+[STARTUP] Auto-detected Arduino on /dev/ttyACM0
+[logitech] Stable path not found, falling back to index 3
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786708247.892556   35544 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1786708247.902325   35706 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.24.04.2), renderer: llvmpipe (LLVM 20.1.2, 256 bits)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Detected screen resolution: 1920x1080
+Each panel size: 960x1080
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[STARTUP] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[STARTUP] Checking home limit switches ...
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[STARTUP] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[STARTUP] Arduino READY. Sending STATUS? ...
+[STARTUP] Pin 2 is RELEASED. Continuing.
+[STARTUP] Sending CSTATUS? ...
+[Arduino] SWITCH:RELEASED
+[STARTUP] Pin 3 (collision) is CLEAR. Continuing.
+[STARTUP] Checking collision prox (A0) state before starting...
+[Arduino] COLLISION:CLEAR
+[Arduino] PROXC:CLEAR
+[STARTUP] Collision prox (A0) = CLEAR
+[STARTUP] Checking M2 home switch / prox-2 state before starting...
+[Arduino] HOME2:AWAY
+[Arduino] PROX2:CLEAR
+[STARTUP] M2 home switch = AWAY, Prox2 = CLEAR
+[Arduino] READY
+Sent F:87 to Arduino
+Sent -> Eye err:  +87
+[Arduino] READY
+Sent F:87 to Arduino
+Sent -> Eye err:  +87
+Sent F:86 to Arduino
+Sent -> Eye err:  +86
+Sent F:86 to Arduino
+Sent -> Eye err:  +86
+Sent F:86 to Arduino
+Sent -> Eye err:  +86
+Sent F:87 to Arduino
+Sent -> Eye err:  +87
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+[Arduino] READY
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:89 to Arduino
+Sent -> Eye err:  +89
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:88 to Arduino
+Sent -> Eye err:  +88
+Sent F:87 to Arduino
+Sent -> Eye err:  +87
+[Arduino] READY
+Sent F:85 to Arduino
+Sent -> Eye err:  +85
+Sent F:81 to Arduino
+Sent -> Eye err:  +81
+Sent F:74 to Arduino
+Sent -> Eye err:  +74
+Sent F:67 to Arduino
+Sent -> Eye err:  +67
+Sent F:59 to Arduino
+Sent -> Eye err:  +59
+Sent F:52 to Arduino
+Sent -> Eye err:  +52
+Sent F:46 to Arduino
+Sent -> Eye err:  +46
+[Arduino] READY
+Sent F:42 to Arduino
+Sent -> Eye err:  +42
+Sent F:39 to Arduino
+Sent -> Eye err:  +39
+Sent F:36 to Arduino
+Sent -> Eye err:  +36
+Sent F:33 to Arduino
+Sent -> Eye err:  +33
+Sent F:29 to Arduino
+Sent -> Eye err:  +29
+Sent F:25 to Arduino
+Sent -> Eye err:  +25
+Sent F:23 to Arduino
+Sent -> Eye err:  +23
+Sent F:21 to Arduino
+Sent -> Eye err:  +21
+[Arduino] READY
+Sent F:18 to Arduino
+Sent -> Eye err:  +18
+Sent F:16 to Arduino
+Sent -> Eye err:  +16
+Sent F:12 to Arduino
+Sent -> Eye err:  +12
+Sent F:9 to Arduino
+Sent -> Eye err:   +9
+-----Image captured: 'Alined_EYE_.jpg'-----
+Sent F:6 to Arduino
+Sent -> Eye err:   +6
+[post-capture] Sent F:0 to Arduino
+*****Alignment achieved. Displaying for 4 seconds*****
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] SWITCH:RELEASED
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[Arduino] READY
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+[display-loop] Sent F:0 to Arduino
+*****Exiting display loop*****
+Normal exit.
+[shutdown] serial_reader thread exited cleanly.
+[shutdown] Sent F:0 to Arduino
+[shutdown] Serial port closed.
+
+---- Running: client.py --camera ----
+[0;93m2026-08-14 17:20:57.672117376 [W:onnxruntime:Default, device_discovery.cc:283 GetGpuDevices] Failed to detect devices under "/sys/class/drm/card0": device_discovery.cc:93 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+2026-08-14 17:20:57,746 [INFO] Config: /home/bharataap/Desktop/am-mock-client-1.1.0/config.yaml  |  mode=server  |  server=http://localhost:8000
+[ WARN:0@0.101] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+2026-08-14 17:20:57,751 [INFO] FaceDetector (YuNet, OpenCV 5 native) | input=640x640  threshold=0.50
+[ WARN:0@0.168] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+2026-08-14 17:20:57,818 [INFO] SFaceEmbedder (128-dim, L2, native OpenCV 5) | /home/bharataap/Desktop/am-mock-client-1.1.0/./models/face_recognition_sface_2021dec.onnx
+2026-08-14 17:20:57,818 [INFO] Detector: YuNet  |  Embedder: sface (128-dim)
+2026-08-14 17:20:57,823 [INFO] Camera 3 opened | frame_skip=10 | embedder=128-dim
+2026-08-14 17:20:57,827 [INFO] Server http://localhost:8000: OK
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/Desktop/am-mock-client-1.1.0/.venv/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/Desktop/am-mock-client-1.1.0/.venv/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/Desktop/am-mock-client-1.1.0/.venv/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/Desktop/am-mock-client-1.1.0/.venv/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/Desktop/am-mock-client-1.1.0/.venv/lib/python3.12/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+2026-08-14 17:20:58,750 [INFO] Server → name='eshwar@1' confidence = 0.6417074799537659 distance = 0.7165850400924683
+2026-08-14 17:20:58,750 [INFO] Match streak: eshwar@1 x1/5
+2026-08-14 17:20:59,065 [INFO] Server → name='eshwar@1' confidence = 0.6617823541164398 distance = 0.6764352917671204
+2026-08-14 17:20:59,065 [INFO] Match streak: eshwar@1 x2/5
+2026-08-14 17:20:59,395 [INFO] Server → name='eshwar@1' confidence = 0.6986405551433563 distance = 0.6027188897132874
+2026-08-14 17:20:59,395 [INFO] Match streak: eshwar@1 x3/5
+2026-08-14 17:20:59,730 [INFO] Server → name='eshwar@1' confidence = 0.663509875535965 distance = 0.6729802489280701
+2026-08-14 17:20:59,730 [INFO] Match streak: eshwar@1 x4/5
+2026-08-14 17:21:00,063 [INFO] Server → name='eshwar@1' confidence = 0.7087735235691071 distance = 0.5824529528617859
+2026-08-14 17:21:00,063 [INFO] Match streak: eshwar@1 x5/5
+2026-08-14 17:21:00,291 [INFO] person_detail.txt written: eshwar@1 -> /home/bharataap/Desktop/am-mock-client-1.1.0/person_detail.txt
+Camera running — press 'q' to quit
+Will auto-exit after 5 consecutive matches on the same face
+Detection time budget: 7s (writes error-person to person_detail.txt if nobody is confirmed in time)
+
+>>> Confirmed: eshwar@1 (5 consecutive matches) — exiting camera loop
+
+
+==================================================================
+PERSON CONFIRMED: eshwar@1  (2026-08-14 17:21:00)
+==================================================================
+
+---- Running: meditation-app ----
+Playing meditation video in full screen...
+ (+) Video --vid=1 (*) (h264 1280x720 30.017fps)
+ (+) Audio --aid=1 (*) (aac 2ch 48000Hz)
+libEGL warning: failed to get driver name for fd -1
+
+libEGL warning: MESA-LOADER: failed to retrieve device information
+
+libEGL warning: failed to get driver name for fd -1
+
+MESA: error: ZINK: failed to choose pdev
+libEGL warning: egl: failed to create dri2 screen
+[vo/gpu/opengl] Suspected software renderer or indirect context.
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+[vo/gpu/opengl] Suspected software renderer or indirect context.
+[vo/gpu/drm] VT_GETMODE failed: Inappropriate ioctl for device
+[vo/gpu/drm] Failed to set up VT switcher. Terminal switching will be unavailable.
+[vo/gpu/drm] Failed to acquire DRM master: Permission denied
+[vo/gpu/drm] Failed to commit ModeSetting atomic request: Permission denied
+[vo/gpu/opengl] Failed to set CRTC for connector 38: Permission denied
+[vo/gpu] Failed to commit atomic request: Permission denied
+[vo/gpu/drm] Failed to commit ModeSetting atomic request: Permission denied
+[vo/gpu/drm] Failed to restore previous mode
+[vo/gpu/drm] Failed to drop DRM master: Permission denied
+[vo/gpu/libplacebo] Found no suitable device, giving up.
+[vo/gpu/libplacebo] Failed initializing vulkan device
+[vo/gpu/libplacebo] Found no suitable device, giving up.
+[vo/gpu/libplacebo] Failed initializing vulkan device
+libEGL warning: failed to get driver name for fd -1
+
+libEGL warning: MESA-LOADER: failed to retrieve device information
+
+libEGL warning: failed to get driver name for fd -1
+
+MESA: error: ZINK: failed to choose pdev
+libEGL warning: egl: failed to create dri2 screen
+[vo/gpu-next/opengl] Suspected software renderer or indirect context.
+libEGL warning: DRI3 error: Could not get DRI3 device
+libEGL warning: Ensure your X server supports DRI3 to get accelerated rendering
+[vo/gpu-next/opengl] Suspected software renderer or indirect context.
+[vo/gpu-next/drm] Can't handle VT release - signal already used
+[vo/gpu-next/drm] Failed to set up VT switcher. Terminal switching will be unavailable.
+[vo/gpu-next/drm] Failed to acquire DRM master: Permission denied
+[vo/gpu-next/drm] Failed to commit ModeSetting atomic request: Permission denied
+[vo/gpu-next/opengl] Failed to set CRTC for connector 38: Permission denied
+[vo/gpu-next] Failed to commit atomic request: Permission denied
+[vo/gpu-next/drm] Failed to commit ModeSetting atomic request: Permission denied
+[vo/gpu-next/drm] Failed to restore previous mode
+[vo/gpu-next/drm] Failed to drop DRM master: Permission denied
+[vo/gpu-next/libplacebo] Found no suitable device, giving up.
+[vo/gpu-next/libplacebo] Failed initializing vulkan device
+[vo/gpu-next/libplacebo] Found no suitable device, giving up.
+[vo/gpu-next/libplacebo] Failed initializing vulkan device
+[vo/vdpau] Error when calling vdp_device_create_x11: 1
+AO: [pipewire] 48000Hz stereo 2ch floatp
+VO: [wlshm] 1280x720 yuv420p
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.000
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.031
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.028
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.025
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.023
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.020
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.018
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.016
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.015
+AV: 00:00:00 / 00:01:00 (0%) A-V:  0.013
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.012
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.011
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.010
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.009
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.008
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.007
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.006
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.005
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.004
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.003
+AV: 00:00:00 / 00:01:00 (1%) A-V:  0.002
+AV: 00:00:00 / 00:01:00 (2%) A-V:  0.002
+AV: 00:00:01 / 00:01:00 (2%) A-V:  0.002
+AV: 00:00:01 / 00:01:00 (2%) A-V:  0.001
+AV: 00:00:01 / 00:01:00 (2%) A-V:  0.000
+AV: 00:00:01 / 00:01:00 (3%) A-V:  0.000
+AV: 00:00:02 / 00:01:00 (3%) A-V:  0.000
+AV: 00:00:02 / 00:01:00 (4%) A-V:  0.000
+AV: 00:00:02 / 00:01:00 (5%) A-V:  0.000
+AV: 00:00:03 / 00:01:00 (5%) A-V:  0.000
+AV: 00:00:03 / 00:01:00 (6%) A-V:  0.000
+AV: 00:00:03 / 00:01:00 (7%) A-V:  0.000
+AV: 00:00:04 / 00:01:00 (7%) A-V:  0.000
+AV: 00:00:04 / 00:01:00 (8%) A-V:  0.000
+AV: 00:00:05 / 00:01:00 (8%) A-V:  0.000
+AV: 00:00:05 / 00:01:00 (9%) A-V:  0.000
+AV: 00:00:05 / 00:01:00 (10%) A-V:  0.000
+AV: 00:00:06 / 00:01:00 (10%) A-V:  0.000
+AV: 00:00:06 / 00:01:00 (11%) A-V:  0.000
+AV: 00:00:06 / 00:01:00 (12%) A-V:  0.000
+AV: 00:00:07 / 00:01:00 (12%) A-V:  0.000
+AV: 00:00:07 / 00:01:00 (13%) A-V:  0.000
+AV: 00:00:08 / 00:01:00 (13%) A-V:  0.000
+AV: 00:00:08 / 00:01:00 (14%) A-V:  0.000
+AV: 00:00:08 / 00:01:00 (15%) A-V:  0.000
+AV: 00:00:09 / 00:01:00 (15%) A-V:  0.000
+AV: 00:00:09 / 00:01:00 (16%) A-V:  0.000
+AV: 00:00:09 / 00:01:00 (17%) A-V:  0.000
+AV: 00:00:10 / 00:01:00 (17%) A-V:  0.000
+AV: 00:00:10 / 00:01:00 (18%) A-V:  0.000
+AV: 00:00:11 / 00:01:00 (18%) A-V:  0.000
+AV: 00:00:11 / 00:01:00 (19%) A-V:  0.000
+AV: 00:00:11 / 00:01:00 (20%) A-V:  0.000
+AV: 00:00:12 / 00:01:00 (20%) A-V:  0.000
+AV: 00:00:12 / 00:01:00 (21%) A-V:  0.000
+AV: 00:00:12 / 00:01:00 (22%) A-V:  0.000
+AV: 00:00:13 / 00:01:00 (22%) A-V:  0.000
+Exiting... (Quit)
+AV: 00:00:13 / 00:01:00 (22%) A-V:  0.000
+Running Front...
+
+==================================================================
+KIOSK RUN INTERRUPTED BY USER (Ctrl+C): 2026-08-14 17:21:16
+Was running   : meditation-app
+==================================================================
+==================================================================
+KIOSK RUN STARTED: 2026-08-14 17:32:10
+==================================================================
+
+---- Running: HOME4.py ----
+Available serial ports:
+  /dev/ttyS31  —  n/a
+  /dev/ttyS30  —  n/a
+  /dev/ttyS29  —  n/a
+  /dev/ttyS28  —  n/a
+  /dev/ttyS27  —  n/a
+  /dev/ttyS26  —  n/a
+  /dev/ttyS25  —  n/a
+  /dev/ttyS24  —  n/a
+  /dev/ttyS23  —  n/a
+  /dev/ttyS22  —  n/a
+  /dev/ttyS21  —  n/a
+  /dev/ttyS20  —  n/a
+  /dev/ttyS19  —  n/a
+  /dev/ttyS18  —  n/a
+  /dev/ttyS17  —  n/a
+  /dev/ttyS16  —  n/a
+  /dev/ttyS15  —  n/a
+  /dev/ttyS14  —  n/a
+  /dev/ttyS13  —  n/a
+  /dev/ttyS12  —  n/a
+  /dev/ttyS11  —  n/a
+  /dev/ttyS10  —  n/a
+  /dev/ttyS9  —  n/a
+  /dev/ttyS8  —  n/a
+  /dev/ttyS7  —  n/a
+  /dev/ttyS6  —  n/a
+  /dev/ttyS5  —  n/a
+  /dev/ttyS4  —  n/a
+  /dev/ttyS3  —  n/a
+  /dev/ttyS2  —  n/a
+  /dev/ttyS1  —  n/a
+  /dev/ttyS0  —  n/a
+  /dev/ttyUSB0  —  CP2102 USB to UART Bridge Controller - CP2102 USB to UART Bridge Controller
+  /dev/ttyACM0  —  ttyACM0
+
+[INFO] Auto-detected Arduino on /dev/ttyACM0
+Connecting to Arduino on /dev/ttyACM0 at 115200 baud...
+[ WARN:0@0.229] global loadsave.cpp:278 findDecoder imread_('/home/bharataap/Desktop/latest/pause.png'): can't open/read file: check file path/integrity
+[WARNING] Could not load '/home/bharataap/Desktop/latest/pause.png'. Showing placeholder.
+[Python] Serial reader thread started.
+[Python] Press Ctrl+C or 'q' / ESC at any time to stop safely.
+
+[Python] Waiting for Arduino READY ...
+[Arduino] SWITCH:RELEASED
+[Arduino] COLLISION:CLEAR
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Arduino] READY
+[Python] Handshake complete — sent OK to Arduino.
+
+[Python] Checking home limit switches (SELFTEST?) ...
+[Arduino] SYSTEM:READY
+[Arduino] SELFTEST:BEGIN
+[Arduino] TEST:M1_SWITCH=OK
+[Arduino] TEST:M2_SWITCH=OK
+[Arduino] TEST:COLLISION_SWITCH=OK
+[Arduino] SELFTEST:PASS
+[Arduino] SELFTEST:END
+[Python] Limit switches OK: COLLISION_SWITCH=OK, M1_SWITCH=OK, M2_SWITCH=OK
+[Python] Both home limit switches are interfaced and healthy — no replacement needed.
+
+[Python] Checking initial switch state...
+[Python] Querying switch state via STATUS? ...
+[Arduino] SWITCH:RELEASED
+[Python] Switch is open — proceeding.
+[Python] Checking collision switch via CSTATUS? ...
+[Arduino] COLLISION:CLEAR
+[Python] Collision switch is CLEAR. Continuing.
+[Python] Watchdog thread started.
+
+[Python] Checking physical home-limit state for each motor...
+
+[Arduino] HOME1:AWAY
+[Python] Motor 1 physical state: AWAY
+[Arduino] HOME2:AWAY
+[Python] Motor 2 physical state: AWAY
+
+[Python] Returning motors to home position...
+
+
+[Python] Sending: 'home1'
+[Arduino] STATUS:HOMING1_STARTED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+[Arduino] ERROR:HOMING1_NO_HOME_FOUND
+========================================================================
+!!!! M1 (CHEST) HOME NOT FOUND — HOMING ABORTED !!!!
+!!!! The axis travelled its full configured range without reaching home. !!!!
+!!!! It is stopped where it ran out — this is NOT the home position. !!!!
+     Possible causes:
+       - Wrong homing direction (M1_HOME_DIR)
+       - Motor not stepping — driver disabled, stalled or unpowered
+       - Coupling or belt slipped
+       - Axis obstructed before reaching the lever
+       - BOTH prox 1 and the M1 limit switch failed to trigger
+       - HOME_MAX_TRAVEL_MM set shorter than the real axis travel
+========================================================================
+[Arduino] SWITCH:RELEASED
+Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+QFontDatabase: Cannot find font directory /home/bharataap/.local/lib/python3.10/site-packages/cv2/qt/fonts.
+Note that Qt no longer ships fonts. Deploy some (from https://dejavu-fonts.github.io/ for example) or switch to fontconfig.
+[Arduino] SWITCH:RELEASED
+[Arduino] SWITCH:RELEASED
+
+[Python] Motor 1 home not found within configured travel — sending emergency stop to Arduino...
+[Python] Serial port closed.
+[Python] Exited cleanly.
+
+==================================================================
+KIOSK RUN FAILED: 2026-08-14 17:32:44
+Failed at step : HOME4.py
+Exit code      : 2
+==================================================================

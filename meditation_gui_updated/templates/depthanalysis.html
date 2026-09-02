@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depth Analysis</title>
+    <link rel="stylesheet" href="/static/analysis.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        Depth Analysis
+    </div>
+    <div class="content">
+        <div class="button-container">
+            <form action="/depthanalysis" method="post">
+            <button class="analysis-button" onclick="window.location.href='/radar_analysis'">DEPTH</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="next-button-container">
+        <form action="/score_analysis" method="post">
+            <button class="analysis-button" onclick="window.location.href='/score_anaysis'">GET Score</button>
+        </form>
+    </div>
+
+    <div class="next-button-container">
+        <button class="next-button" onclick="window.location.href='/feedback'">NEXT</button>
+    </div>
+</body>
+</html>

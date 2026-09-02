@@ -1,0 +1,20 @@
+[Unit]
+Description=Diya Meditation Kiosk
+# Start once the graphical desktop session is available, and stop with it.
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+# Path to the published executable (see README for how to publish/install).
+ExecStart=/opt/diya-meditation/DiyaMeditation
+# Auto-restart if the app ever exits/crashes — a kiosk should never stay closed.
+Restart=always
+RestartSec=2
+Environment=DOTNET_CLI_TELEMETRY_OPTOUT=1
+# Face-identify backend base URL (identify.py calls POST /api/v1/identify/ here).
+# Change this to your deployed am-master-server instance.
+Environment=DIYA_IDENTIFY_SERVER_URL=http://localhost:8000
+
+[Install]
+WantedBy=graphical-session.target

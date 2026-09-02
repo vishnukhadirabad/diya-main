@@ -1,0 +1,7 @@
+To run the code, open the path terminal and run 'python3 program_name.py'
+To calibrate camera, use 'camera_calibration.py'
+To Undistort the pixels, use 'undistorted_pixel_cal.py'
+For calculations, use 'calculations.py' code and after executing the code, open calculations.csv sheet to use the values.
+To run the motor system, run 'motor_movement_and_com_with_CC.py'
+To see the camera capture, and motor movement, run 'join_code.py' code
+Open the necessary excel sheets for any errors.

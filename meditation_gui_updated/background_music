@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Path to your files
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+VIDEO_PATH="$SCRIPT_DIR/meditation_visualRohan/ONE_MINS.mp4"
+BACKGROUND_MUSIC="$SCRIPT_DIR/1_min_music.mp3"
+
+
+# Play video with background music in sync; music stops when video ends
+echo "Playing video with background music..."
+mpv --fs --audio-file="$BACKGROUND_MUSIC" --audio-file-auto=exact "$VIDEO_PATH"
+

@@ -1,0 +1,29 @@
+server:
+  host: "0.0.0.0"
+  port: 8000
+
+database:
+  # lives in ./data next to the binary so it survives restarts/rebuilds;
+  # the file itself is created on startup by init_db() if it doesn't exist yet
+  path: "./data/db.sqlite"
+
+models:
+  # loaded from ./models next to the binary
+  face_detector_path: "./models/face_detection_yunet_2026may.onnx"
+  face_recognizer_path: "./models/face_recognition_sface_2021dec.onnx"
+  face_recognizer_auraface_path: "./models/aurar100.onnx"
+  # sface (128-dim, native cv2) | auraface (512-dim, onnxruntime) — must match
+  # whichever embedder the client is configured to send
+  embedder_model: "sface"
+  # initial size passed to cv2.FaceDetectorYN.create(); each request calls
+  # setInputSize() with the actual image dimensions before detecting
+  face_detector_input_size: 640
+  face_detector_score_threshold: 0.5
+
+identify:
+  # max normalized-L2 distance between query and stored vector to count as a
+  # match. Carried over from the mobilefacenet pipeline — may need empirical
+  # retuning now that vectors come from SFace's/AuraFace's embedding space.
+  face_recognition_threshold: 0.8
+  fingerprint_recognition_threshold: 0.7
+  default_n: 10

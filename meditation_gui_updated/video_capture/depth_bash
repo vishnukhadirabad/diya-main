@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Navigate to the directory where the scripts are located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_DIR/depth" || exit
+
+# Run visual1capture.py in the background
+python3 depthacquisition.py &
+
+
+wait

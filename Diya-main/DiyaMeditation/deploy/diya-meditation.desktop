@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Diya Meditation
+Comment=Museum meditation kiosk
+Exec=/opt/diya-meditation/DiyaMeditation
+Terminal=false
+X-GNOME-Autostart-enabled=true
+NoDisplay=true

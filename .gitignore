@@ -1,0 +1,62 @@
+# ---- Python virtual environments (regenerable; contain >100MB binaries) ----
+venv/
+venv.*/
+.venv/
+.venv*/
+env/
+iith/
+**/lib/python3.*/
+**/lib64/python3.*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- Node ----
+node_modules/
+
+# ---- .NET / C++ build output (regenerable) ----
+[Bb]in/
+[Oo]bj/
+build/
+dist/
+*.o
+*.so
+*.so.*
+*.dylib
+*.a
+*.pkg
+
+# ---- Packaged artifacts ----
+*.deb
+*.zip
+*.tar
+*.tar.gz
+
+# ---- Media (exceeds GitHub file limits) ----
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# ---- ML model weights / datasets (exceeds GitHub file limits) ----
+*.pt
+*.pth
+*.npy
+*.npz
+*.dat
+*.yml.bak
+TrainData/Trainner.yml
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+*.mts
+*.m2ts
+*.wmv
+*.flv
+*.webm

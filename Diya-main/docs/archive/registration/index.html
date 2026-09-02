@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Diya Meditation — Visitor Registration</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(135deg, #1a1330, #0e0b16); color: #f4f0ff; padding: 24px;
+    }
+    .card {
+      width: 100%; max-width: 420px; background: #231a3d; border-radius: 20px;
+      padding: 32px; box-shadow: 0 16px 48px rgba(0,0,0,.4);
+    }
+    h1 { margin: 0 0 4px; font-size: 28px; }
+    p.sub { margin: 0 0 24px; color: #b4a9d6; }
+    label { display: block; font-size: 14px; color: #b4a9d6; margin: 14px 0 6px; }
+    input {
+      width: 100%; padding: 12px 14px; font-size: 16px; border-radius: 10px;
+      border: 1px solid #3a2f5c; background: #1a1330; color: #f4f0ff;
+    }
+    button {
+      width: 100%; margin-top: 22px; padding: 14px; font-size: 16px; font-weight: 600;
+      border: none; border-radius: 10px; background: #e9b872; color: #1a1330; cursor: pointer;
+    }
+    button:disabled { opacity: .6; cursor: default; }
+    #result { display: none; text-align: center; margin-top: 24px; }
+    #qrWrap { display: none; }
+    #qr { display: inline-block; background: #fff; padding: 14px; border-radius: 12px; }
+    .passid { font-size: 22px; font-weight: 700; letter-spacing: 3px; margin-top: 14px; color: #e9b872; }
+    .done { font-size: 22px; font-weight: 700; color: #7ee0a0; margin-bottom: 8px; }
+    .error { color: #ff9a9a; font-size: 14px; margin-top: 12px; min-height: 18px; }
+    .secondary { background: transparent; color: #b4a9d6; border: 1px solid #3a2f5c; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Diya Meditation</h1>
+    <p class="sub" id="subtitle">Register to get your entry pass</p>
+
+    <form id="form">
+      <label for="name">Name</label>
+      <input id="name" required autocomplete="name" />
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" />
+      <label for="age">Age</label>
+      <input id="age" type="number" min="1" max="120" />
+      <button type="submit" id="submitBtn">Register</button>
+      <div class="error" id="formError"></div>
+    </form>
+
+    <div id="result">
+      <!-- Phone/session mode: just a confirmation -->
+      <div id="doneWrap" style="display:none">
+        <div class="done">✓ You're registered!</div>
+        <p class="sub" id="doneMsg">Head back to the kiosk — it will continue automatically.</p>
+        <button class="secondary" onclick="resetForm()">Register another</button>
+      </div>
+      <!-- Standalone mode: a printable QR pass -->
+      <div id="qrWrap">
+        <div id="qr"></div>
+        <div class="passid" id="passId"></div>
+        <p class="sub" style="margin-top:16px">Show this QR code at the Diya kiosk.</p>
+        <button class="secondary" onclick="window.print()">Print pass</button>
+        <button class="secondary" onclick="resetForm()">Register another</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Same-origin when served by the API. If hosting the site separately,
+    // set this to the API URL, e.g. 'https://diya-registration.onrender.com'.
+    const API_BASE = '';
+
+    // If opened from the kiosk's QR, the URL carries ?session=<token>.
+    const SESSION = new URLSearchParams(location.search).get('session');
+
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+    const submitBtn = document.getElementById('submitBtn');
+    const formError = document.getElementById('formError');
+    const subtitle = document.getElementById('subtitle');
+
+    if (SESSION) {
+      subtitle.textContent = 'Enter your details to begin your session';
+      submitBtn.textContent = 'Register & continue';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.textContent = '';
+
+      const data = {
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        age: Number(document.getElementById('age').value) || 0
+      };
+      if (SESSION) data.session = SESSION;
+      if (!data.name) { formError.textContent = 'Please enter your name.'; return; }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Saving…';
+
+      try {
+        const resp = await fetch(`${API_BASE}/api/visitors`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!resp.ok) {
+          const body = await resp.json().catch(() => ({}));
+          throw new Error(body.error || `Server error (${resp.status})`);
+        }
+        const out = await resp.json();
+
+        form.style.display = 'none';
+        result.style.display = 'block';
+
+        if (SESSION) {
+          // Phone mode: show confirmation. Warn if the kiosk code had expired.
+          document.getElementById('doneWrap').style.display = 'block';
+          if (out.linked === false) {
+            document.getElementById('doneMsg').textContent =
+              'Registered — but the kiosk code expired. Ask the kiosk to show a new code.';
+          }
+        } else {
+          // Standalone mode: render a printable QR pass of the id.
+          if (!out.id) throw new Error('Server did not return an id.');
+          const qr = document.getElementById('qr');
+          qr.innerHTML = '';
+          new QRCode(qr, { text: out.id, width: 240, height: 240, correctLevel: QRCode.CorrectLevel.M });
+          document.getElementById('passId').textContent = out.id;
+          document.getElementById('qrWrap').style.display = 'block';
+        }
+      } catch (err) {
+        formError.textContent = err.message || 'Could not reach the server. Try again.';
+        form.style.display = 'block';
+        result.style.display = 'none';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = SESSION ? 'Register & continue' : 'Register';
+      }
+    });
+
+    function resetForm() {
+      form.reset();
+      formError.textContent = '';
+      form.style.display = 'block';
+      result.style.display = 'none';
+      document.getElementById('doneWrap').style.display = 'none';
+      document.getElementById('qrWrap').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

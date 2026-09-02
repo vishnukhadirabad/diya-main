@@ -1,0 +1,132 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="DiyaMeditation.Views.HomeView"
+             Background="White">
+
+    <Grid>
+    <Grid ColumnDefinitions="*,*" Margin="56">
+
+        <!-- Left panel: Welcome + registered visitor + Start -->
+        <Border Grid.Column="0" Margin="0,0,20,0" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="8" Padding="56">
+            <StackPanel VerticalAlignment="Center" Spacing="24">
+                <TextBlock Text="Welcome" FontSize="52" FontWeight="Bold" Foreground="#1F2A37" />
+
+                <StackPanel Name="DetailsPanel" IsVisible="False" Spacing="14">
+                    <StackPanel Spacing="4">
+                        <TextBlock Name="NameText" FontSize="24" FontWeight="SemiBold" Foreground="#111827" />
+                        <TextBlock Name="EmailText" FontSize="15" Foreground="#6B7280" />
+                    </StackPanel>
+                </StackPanel>
+
+                <Button Content="Start" Click="OnStart"
+                        Background="#111827" Foreground="White" FontSize="18" FontWeight="SemiBold"
+                        Padding="32,18" CornerRadius="8" HorizontalAlignment="Left" />
+
+                <TextBlock Name="StatusText" FontSize="14" Foreground="#9CA3AF" TextWrapping="Wrap" />
+            </StackPanel>
+        </Border>
+
+        <!-- Right panel: face-identify camera status + live status + name fallback -->
+        <Border Grid.Column="1" Margin="20,0,0,0" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="8" Padding="40">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="18">
+
+                <TextBlock Text="Look at the camera" FontSize="22" FontWeight="SemiBold"
+                           Foreground="#1F2A37" HorizontalAlignment="Center" />
+
+                <Border Background="White" BorderBrush="#E5E7EB" BorderThickness="1" CornerRadius="12"
+                        Padding="16" HorizontalAlignment="Center">
+                    <Panel Width="220" Height="220">
+                        <TextBlock Name="PreviewPlaceholder" Text="📷" FontSize="72"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#9CA3AF" />
+                        <!-- Live camera preview (owned by the UI for a zero-lag feed);
+                             frozen on the matched frame. Sits above the placeholder. -->
+                        <Image Name="PreviewImage" Stretch="UniformToFill" />
+                    </Panel>
+                </Border>
+
+                <!-- Match/no-match badge: sits directly under the camera, fades + scales in
+                     the instant the identify result comes back (green = matched, red = not). -->
+                <Border Name="MatchBadge" IsVisible="False" Opacity="0" RenderTransform="scale(0.7)"
+                        RenderTransformOrigin="0.5,0.5" CornerRadius="24" Padding="22,10"
+                        HorizontalAlignment="Center">
+                    <Border.Transitions>
+                        <Transitions>
+                            <DoubleTransition Property="Opacity" Duration="0:0:0.3" Easing="CubicEaseOut" />
+                            <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.3" Easing="CubicEaseOut" />
+                        </Transitions>
+                    </Border.Transitions>
+                    <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+                        <TextBlock Name="MatchBadgeIcon" FontSize="20" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
+                        <TextBlock Name="MatchBadgeText" FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+
+                <TextBlock Name="IdentifyHint" Text="Look at the camera to check in."
+                           FontSize="14" Foreground="#6B7280" TextWrapping="Wrap"
+                           TextAlignment="Center" HorizontalAlignment="Center" MaxWidth="300" />
+
+                <TextBlock Name="LiveStatus" Text="Looking for your face…"
+                           FontSize="15" FontWeight="SemiBold" Foreground="#9CA3AF"
+                           TextAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" MaxWidth="320" />
+
+                <Button Name="RetryButton" Content="Retry" Click="OnRetry" IsVisible="False"
+                        Background="Transparent" Foreground="#6B7280" FontSize="13"
+                        BorderBrush="#E5E7EB" BorderThickness="1" Padding="14,8" CornerRadius="8"
+                        HorizontalAlignment="Center" />
+
+                <StackPanel Spacing="8" HorizontalAlignment="Center" Margin="0,4,0,0">
+                    <TextBlock Text="or just enter your details" FontSize="13" Foreground="#9CA3AF"
+                               HorizontalAlignment="Center" />
+                    <TextBox Name="NameBox" Watermark="Your name" FontSize="15" Width="240"
+                             Padding="12,10" CornerRadius="8" BorderBrush="#E5E7EB" />
+                    <TextBox Name="EmailBox" Watermark="Email (Gmail)" FontSize="15" Width="240"
+                             Padding="12,10" CornerRadius="8" BorderBrush="#E5E7EB" />
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+
+        <!-- Full-screen report overlay: shown after the pipeline finishes.
+             The Return button resets everything for the next visitor. -->
+        <Grid Name="ReportOverlay" IsVisible="False" Background="#0E0B16" RowDefinitions="Auto,*">
+            <Border Grid.Row="0" Background="#1F2A37" Padding="24,16">
+                <Grid ColumnDefinitions="*,Auto">
+                    <TextBlock Grid.Column="0" Text="Your Report" FontSize="24" FontWeight="Bold"
+                               Foreground="White" VerticalAlignment="Center" />
+                    <Button Grid.Column="1" Content="Return" Click="OnReturn"
+                            Background="#E9B872" Foreground="#1A1330" FontSize="16" FontWeight="SemiBold"
+                            Padding="26,12" CornerRadius="8" />
+                </Grid>
+            </Border>
+            <ScrollViewer Name="ReportScroll" Grid.Row="1" Padding="24">
+                <StackPanel Name="ReportPages" Spacing="16" HorizontalAlignment="Center" />
+            </ScrollViewer>
+            <TextBlock Name="ReportMessage" Grid.Row="1" IsVisible="False"
+                       Foreground="#F4F0FF" FontSize="18" TextWrapping="Wrap" TextAlignment="Center"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="620" Margin="24" />
+        </Grid>
+
+        <!-- Session backdrop. The kiosk used to Hide() itself for the whole
+             pipeline, which exposed the desktop and taskbar in every gap between
+             one stage's window closing and the next one opening. Staying visible
+             behind the stage windows means those gaps are plain black instead. -->
+        <Border Name="SessionBackdrop" IsVisible="False" Background="Black" />
+
+        <!-- Recognition confirmation. Covers the whole screen the instant FRS
+             matches, so the visitor gets an unmissable "MATCHED" before the
+             meditation video takes over. Last child = drawn on top. -->
+        <Border Name="MatchedOverlay" IsVisible="False" Background="#0B3D2E">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="28">
+                <TextBlock Text="✓" FontSize="180" FontWeight="Bold" Foreground="#34D399"
+                           HorizontalAlignment="Center" />
+                <TextBlock Text="MATCHED" FontSize="96" FontWeight="Bold" Foreground="#ECFDF5"
+                           HorizontalAlignment="Center" />
+                <TextBlock Name="MatchedName" FontSize="40" Foreground="#A7F3D0"
+                           HorizontalAlignment="Center" TextAlignment="Center" />
+                <TextBlock Name="MatchedSub" Text="Starting your session…" FontSize="24"
+                           Foreground="#6EE7B7" HorizontalAlignment="Center" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

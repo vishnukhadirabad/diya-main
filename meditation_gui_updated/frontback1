@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# Get project root directory dynamically
+BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$BASE_DIR" || exit
+
+VIDEO_PATH="$BASE_DIR/meditation_visualRohan/ONE_MINS.mp4"
+STAGES_SCRIPT="$BASE_DIR/run_stages.py"
+ACQUISITION_SCRIPT="$BASE_DIR/acquisition"
+PDF_REPORT="$BASE_DIR/t3.py"
+BLACK_BG="$BASE_DIR/black_background.png"
+
+if [ ! -f "$BLACK_BG" ]; then
+    BLACK_BG="$BASE_DIR/black_background_1920x1080.png"
+fi
+
+# Play the video in full screen. --no-border drops the title bar (--fs alone still
+# left window decorations visible under this WM), --ontop keeps it above the kiosk
+# shell, and --no-osc hides the on-screen player controls. 'q' quits, which is the
+# kiosk's hidden exit key.
+echo "Playing meditation video in full screen..."
+mpv --fs --no-border --ontop --no-osc --really-quiet "$VIDEO_PATH" &
+MPV_PID=$!
+
+# The four camera stages used to be launched here as four separate python3
+# processes. Each one paid interpreter startup, ~1s of imports, MediaPipe model
+# construction and a cold camera open before its first frame reached the
+# screen, while the stage before it paid librealsense teardown — 4.2s of black
+# screen across the sequence, which is what visitors saw as the freeze between
+# stages. run_stages.py runs the same four scripts in one process with the
+# cameras held open across the boundaries, which brings that down to ~0.6s.
+#
+# It is started alongside the video rather than after it: --after-pid holds the
+# first stage back until mpv exits, so the imports and the camera warm-up
+# happen while the visitor is still watching instead of afterwards.
+echo "Running camera stages..."
+python3 "$STAGES_SCRIPT" --after-pid "$MPV_PID"
+STAGES_STATUS=$?
+
+wait "$MPV_PID" 2>/dev/null
+
+if [ $STAGES_STATUS -ne 0 ]; then
+    echo "Camera stages failed. Exiting."
+    exit 1
+fi
+
+# Show black screen
+feh -F "$BLACK_BG" &
+BLACK_PID=$!
+
+# Run acquisition script
+echo "Running acquisition..."
+bash "$ACQUISITION_SCRIPT"
+
+if [ $? -ne 0 ]; then
+    echo "acquisition failed."
+    kill $BLACK_PID 2>/dev/null
+    exit 1
+fi
+
+# The PDF report used to be generated here, after acquisition returned, which
+# left the visitor on a black screen for ~9s once the playback had finished.
+# acquisition now starts t3.py as soon as the four videos it reads are written
+# and waits for it before returning, so by this point the report already exists.
+# $PDF_REPORT is still resolved above so the path stays in one place.
+
+# Remove the black screen. This used to sleep 6 first, which was 6 seconds of
+# dead air after the report had already been written — the kiosk shell sits
+# behind this window, so dropping the black screen immediately reveals the
+# kiosk rather than the desktop.
+kill $BLACK_PID 2>/dev/null
+
+echo "All tasks completed successfully."
+exit 0

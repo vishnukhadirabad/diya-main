@@ -1,0 +1,59 @@
+Source,X,Y
+5,99424.36260000001,0.0,47999.985
+Motor status register for motor M0: 110011101001
+AtTargetPosition,  1
+MoveDirection,     1
+MotorInFault,      0
+Enabled,           1
+PositionalMove,    1
+HLFB State,    HLFB_ASSERTED
+AlertsPresent,     0
+Ready state,   Ready
+Motor status register for motor M1: 110011101001
+AtTargetPosition,  1
+MoveDirection,     1
+MotorInFault,      0
+Enabled,           1
+PositionalMove,    1
+HLFB State,    HLFB_ASSERTED
+AlertsPresent,     0
+Ready state,   Ready
+Motor status register for motor M2: 110011101001
+AtTargetPosition,  1
+MoveDirection,     1
+MotorInFault,      0
+Enabled,           1
+PositionalMove,    1
+HLFB State,    HLFB_ASSERTED
+AlertsPresent,     0
+Ready state,   Ready
+Face Similarity Score, 96.94%
+5,-15179.292,0.0,0.0
+Motor status register for motor M0: 110011100001
+AtTargetPosition,  1
+MoveDirection,     0
+MotorInFault,      0
+Enabled,           1
+PositionalMove,    1
+HLFB State,    HLFB_ASSERTED
+AlertsPresent,     0
+Ready state,   Ready
+Motor status register for motor M1: 110011100001
+AtTargetPosition,  1
+MoveDirection,     0
+MotorInFault,      0
+Enabled,           1
+PositionalMove,    1
+HLFB State,    HLFB_ASSERTED
+AlertsPresent,     0
+Ready state,   Ready
+Motor status register for motor M2: 110011100001
+AtTargetPosition,  1
+MoveDirection,     0
+MotorInFault,      0
+Enabled,           1
+PositionalMove,    1
+HLFB State,    HLFB_ASSERTED
+AlertsPresent,     0
+Ready state,   Ready
+Face Similarity Score, 95.29%

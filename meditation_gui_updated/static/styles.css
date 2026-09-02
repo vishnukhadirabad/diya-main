@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: url('/static/images/autumn-leaves-composition.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;  /* Increased padding */
+    border-radius: 15px;  /* Increased border-radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;  /* Increased max-width */
+}
+
+.login-box h1 {
+    margin-bottom: 30px;  /* Increased margin-bottom */
+    font-size: 3em;  /* Increased font-size */
+    color: #333;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 20px;  /* Increased padding */
+    margin: 15px 0;  /* Increased margin */
+    border: none;
+    border-radius: 10px;  /* Increased border-radius */
+    background: #f1f1f1;
+    font-size: 1.2em;  /* Increased font-size */
+}
+
+.login-box button {
+    width: 100%;
+    padding: 20px;  /* Increased padding */
+    margin-top: 15px;  /* Increased margin-top */
+    border: none;
+    border-radius: 10px;  /* Increased border-radius */
+    background: #333;
+    color: white;
+    font-size: 1.2em;  /* Increased font-size */
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-box button:hover {
+    background: #555;
+}
+
+.flash-messages {
+    margin-top: 20px;
+    color: red;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icon {
+    margin: 0 10px;
+    display: inline-block;
+    color: #333;
+    font-size: 1.5em;  /* Adjust size as needed */
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #555;  /* Hover color */
+}

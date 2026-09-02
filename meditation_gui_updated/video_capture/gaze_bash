@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Path to your video file
+VIDEO_PATH="hand_detection_output.mp4"
+
+# Start playing from 2 minutes (120 seconds)
+ffplay -ss 00:03:16 "$VIDEO_PATH"
+
