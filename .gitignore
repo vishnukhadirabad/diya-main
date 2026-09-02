@@ -63,3 +63,6 @@ Thumbs.db
 
 # Compiled depth binaries (>100MB, exceed GitHub file limit)
 depth_bin/
+
+# Excluded from this repo (kept locally)
+meditation_gui_updated/

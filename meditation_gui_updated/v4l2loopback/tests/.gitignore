@@ -1,7 +1,0 @@
-# ignore  binaries (files without a dot)
-*
-!*.*
-
-# backup files
-*~
-.*.swp

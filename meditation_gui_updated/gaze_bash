@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Path to your video file
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-VIDEO_PATH="$SCRIPT_DIR/video_capture/hand_detection_output.avi"
-
-# Start playing from 2 minutes (120 seconds)
-ffplay -ss 00:02:10 "$VIDEO_PATH"
